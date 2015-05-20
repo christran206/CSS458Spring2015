@@ -1,0 +1,43 @@
+Course Selection
+1. Start
+2. Read Courses
+3. Read Instructors
+4. Read Student Enrollment
+5. Adjust Core Courses
+6. Adjust Electives
+7. Iterations
+	a. Random Full-Time Professor selected and random specialized classes assigned until professor has reached limit of classes they can teach and assign weight
+		Weight based on:
+		Repeated evening assignments from the previous term are weighted negatively
+		Afternoon courses are weighted more favourably than evening courses
+		Random weight value
+		Previous history of student attendance
+		Pass Rate/Fail Rate
+	b. While Full-Time Professors are available, repeat step 4a.
+	c. If classes are left, Select from available part-time instructors to fill needed roles
+	d. Total the weight of the schedule
+	e. Repeat N number of times with N being a large enough number where simulation results become repeatable
+8. Return the schedule(s) with the highest total weight
+9. End
+
+Course Registration
+1. Start
+2. Split Number of students between Undergrad, Graduate, outside Major
+3. Generate number of needed availability of full-time and part-time students
+4. Select Course at Random
+5. Assign most likely available seats based on historic data
+6. Take Average and Distribution of historic attendance rate for course based on factors
+	a. Course Seating
+	b. Course Day\Time
+7. Generate Number within Average and Deviation or N P number
+8. Subtract from either Undergrad, Grad, outside major
+9. Repeat step 3 until courses are filled or no students left
+10.If students remain, parse through courses and fill available seating
+11.End
+
+Student Overflow
+1. Start
+2. Select Random Elective
+3. Fill Students to course based on historic enrollment values
+4. Repeat until all students filled
+
