@@ -1,6 +1,21 @@
 Start
-1. Read professors, populate professor list
-2. Read classes, populate class list
+1. Read professors, populate two professor lists (part/full time)
+	Professor contains:
+		Name
+		Number of classes can teach
+		Number of students advising (497)
+		Times taught evenings last three quarters
+		Specialties
+		
+2. Read classes, populate class lists (core/elective)
+	Class contains:
+		Name/number
+		Time
+		Day
+		Quarter
+		Student limit
+		Specialty
+		
 3. Create student list
 4. Analyze professor and class lists, find occurrences of specialty classes and professors
 5. For each full-time professor, starting with rarest specialties:
