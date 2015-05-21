@@ -1,0 +1,41 @@
+Start
+-> Import classes, populate class lists (core/elective)
+	Class contains:
+		Name/number
+		Time
+		Day
+		Quarter
+		Student limit
+		Specialty
+
+-> Read professors, populate two professor lists (part/full time)
+	Professor contains:
+		Name
+		Number of classes can teach
+		Number of students advising (497)
+		Times taught evenings last three quarters
+		Specialties
+
+-> Create student list
+	Student contains:
+		Unique SID
+		Classes taken, grades received (or pass/fail)
+		Elective credits taken (and passed)
+		(Seniority/class)
+
+-> While more classes are available:
+	While more full-time professors are available:
+		Select random Professor from full-time list:
+			Create class sub-list, contains only classes Professor can teach
+			Apply weight to each class, determine probability for each
+			While Professor can teach more classes:
+				Assign most probable class to professor
+				Remove that class from the list
+   	While more part-time professors are available:
+		Select available course from course list
+			Select available part-time professor with matching specialty
+				Assign class to professor
+				Add static weight amount
+
+-> Store schedule and total weight
+Return Schedule
