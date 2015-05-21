@@ -1,0 +1,35 @@
+Start
+1. Read professors, populate professor list
+2. Read classes, populate class list
+3. Create student list
+4. Analyze professor and class lists, find occurrences of specialty classes and professors
+5. For each full-time professor, starting with rarest specialties:
+ 	If Professor hasn’t taught evenings twice in last three quarters & no professor evening preference:
+		Assign professor classes matching specialties (rarest first), evening-weighted.
+	Else:
+		Assign professor classes matching specialties (rarest first), evening-avoiding.
+6. While classes remain:
+	For each part-time professor, starting with rarest specialties:
+		If Part-timers are full:
+			Add new professors
+ 		If Professor hasn’t taught evenings twice in last three quarters & no professor evening preference:
+			Assign professor 1 class matching specialties (rarest first), evening-weighted.
+		Else:
+			Assign professor 1 class matching specialties (rarest first), evening-avoiding.
+	
+7. For each student:
+	If 3 classes they haven’t passed are available:
+		Assign 3 classes they haven’t passed.
+		UNLESS, they have reached their elective limit.
+			Then, assign 3 or fewer core classes.
+(SENIORITY?)
+	Use binomial distribution to determine grades (two sets of input, one for core, one for elective)
+	Update grades for student’s next quarter
+//Quarter complete
+8. If more quarters will be simulated:
+	Add new classes
+	Add new students
+	
+
+
+Return Schedule(s)
