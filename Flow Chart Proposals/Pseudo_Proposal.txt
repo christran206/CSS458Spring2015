@@ -16,14 +16,26 @@ Start
 		Student limit
 		Specialty
 		
+//Create Schedule
+	//Schedule contains:
+		//Class and professor links
+		//Student count
+		
 3. Create student list
+	Student contains:
+		Unique SID
+		Classes taken, grades received (or pass/fail)
+		Elective credits taken (and passed)
+		(Seniority/class)
+		
 4. Analyze professor and class lists, find occurrences of specialty classes and professors
+	//See which specialties are the rarest, so the only Profs that teach X aren't too busy teaching the more general Y
 5. For each full-time professor, starting with rarest specialties:
  	If Professor hasn’t taught evenings twice in last three quarters & no professor evening preference:
 		Assign professor classes matching specialties (rarest first), evening-weighted.
 	Else:
 		Assign professor classes matching specialties (rarest first), evening-avoiding.
-6. While classes remain:
+6. While empty classes remain:
 	For each part-time professor, starting with rarest specialties:
 		If Part-timers are full:
 			Add new professors
@@ -32,12 +44,11 @@ Start
 		Else:
 			Assign professor 1 class matching specialties (rarest first), evening-avoiding.
 	
-7. For each student:
+7. For each student (starting with highest seniority):
 	If 3 classes they haven’t passed are available:
 		Assign 3 classes they haven’t passed.
 		UNLESS, they have reached their elective limit.
 			Then, assign 3 or fewer core classes.
-(SENIORITY?)
 	Use binomial distribution to determine grades (two sets of input, one for core, one for elective)
 	Update grades for student’s next quarter
 //Quarter complete
@@ -45,6 +56,5 @@ Start
 	Add new classes
 	Add new students
 	
-
-
+9. Analysis 
 Return Schedule(s)
