@@ -105,7 +105,8 @@ Course,Time,Day,Cap,Quarter,Expertise
 205/405,1:15-2:05,Th,20,Spring,Teaching
 301A,1:15,T/Th,30,Winter,Writing
 301A,1:15,T/Th,30,Spring,Writing
-"301A,D",11:00,T/TH,60,Autumn,Writing
+301A,11:00,T/TH,60,Autumn,Writing
+301D,11:00,T/TH,60,Autumn,Writing
 301B,5:45,T/Th,30,Autumn,Writing
 301B,1:15,T/Th,30,Winter,Writing
 301B,3:30,T/Th,30,Spring,Writing
