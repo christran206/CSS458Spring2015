@@ -21,7 +21,7 @@ Course,Time,Day,Cap,Quarter,Expertise
 370,5:45,M/W,60,Autumn,Software Engineering
 371,5:45,T/Th,45,Autumn,Teaching
 371,5:45,T/Th,45,Spring,Teaching
-383,3-Jan,F,45,Autumn,
+383,3-Jan,F,45,Autumn,Databases
 385,3:30,T/Th,45,Spring,Programming
 411,1:15,M/W,45,Spring,Teaching
 415,3:30,TTh,45,Spring,Cybersecurity
@@ -46,7 +46,7 @@ Course,Time,Day,Cap,Quarter,Expertise
 480,5:45,M/W,45,Spring,Software Engineering
 490,6:00-8:20,M/W,45,Summer,Capstone
 495,,,,Summer,Capstone
-496,5:45,M/W,10,Spring,Captone
+496,5:45,M/W,10,Spring,Capstone
 497,,,,Summer,Capstone
 497,,,,Autumn,Capstone
 497,,,,Winter,Capstone
@@ -137,11 +137,11 @@ Course,Time,Day,Cap,Quarter,Expertise
 422A,5:45,M/W,45,Spring,Hardware
 422B,3:30,T/Th,45,Autumn,Hardware
 422B,1:15,T/Th,45,Spring,Hardware
-427A,5:45,M/W,15,Winter,Hardware
-427A Lab,2:30-5:30,F,15,Winter,Hardware
-427B,5:45,M/W,15,Winter,Hardware
-427B Lab,2:30-5:30,F,15,Winter,Hardware
-428 (6),5:45,M/W,45,Spring,Hardware
+427A,5:45,M/W,15,Winter,Computer Engineering
+427A Lab,2:30-5:30,F,15,Winter,Computer Engineering
+427B,5:45,M/W,15,Winter,Computer Engineering
+427B Lab,2:30-5:30,F,15,Winter,Computer Engineering
+428 (6),5:45,M/W,45,Spring,Computer Engineering
 428 Lab,2:30-5:30,F,45,Spring,Hardware
 430 A,3:30,M/W,45,Autumn,Operating Systems
 430A,8:00,M/W,45,Spring,Operating Systems
