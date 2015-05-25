@@ -2,7 +2,7 @@ __author__ = 'Christopher'
 
 class Course:
 
-    def __init__(self, sln, number, name, quarter, days, time, instructor, enrolled, capacity):
+    def __init__(self, sln, number, name, quarter, days, time, instructor, enrolled, capacity, expertise = ""):
         self.sln = sln
         self.number = number
         self.name = name
@@ -12,14 +12,7 @@ class Course:
         self.enrolled = enrolled
         self.capacity = capacity
         self.instructor = instructor
-        
-    def next(self, number, time, days, capacity, quarter, expertise):
-        self.number = number
-        self.time = time
-        self.days = days
-        self.capacity = capacity
-        self.quarter = quarter
-        self.expertise = expertise
-        
+        self.expertise = expertise 
+   
 
 

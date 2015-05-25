@@ -10,7 +10,7 @@ from TimeSchedules.course import Course
 def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
     
     """
-    Import courses generates a numpy array of courses from a data file
+    Import courses generates a list of course objects from a data file
     
     Inputs:
         *path - The path to the course data file
@@ -19,18 +19,27 @@ def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
         *header - number of rows at top to ignore for header data
         
     Outputs:
-        A details x number of courses numpy array of course data
+        A list of course objects defined by the data in the input file
     
     """
     
+    # Generate an array from the input file of course details
     courses = N.genfromtxt(path, delimiter = delimit, \
     dtype = type, skip_header=header)
     
+    # Prepare a list of courses to return
     courseList = []
     
-    
-       
-    return courses
+    # Iterate through each row in array, creating new course objects
+    for i in xrange(N.shape(courses)[0]):
+        
+        # Append each course to the course list
+        courseList.append(nextCourse)
+               
+    # Return the list
+    return courseList
+
+
 
 def importFaculty(path ='faculty.csv', delimit = ',', type = 'str', header = 1):
     
