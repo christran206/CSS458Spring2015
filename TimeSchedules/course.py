@@ -12,5 +12,14 @@ class Course:
         self.enrolled = enrolled
         self.capacity = capacity
         self.instructor = instructor
+        
+    def next(self, number, time, days, capacity, quarter, expertise):
+        self.number = number
+        self.time = time
+        self.days = days
+        self.capacity = capacity
+        self.quarter = quarter
+        self.expertise = expertise
+        
 
 
