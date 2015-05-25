@@ -5,7 +5,7 @@
 ##------------------------------------------------------------------------------
 import numpy as N
 from professor import Professor
-#from course import Course
+from TimeSchedules/course import Course
 
 def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
     
