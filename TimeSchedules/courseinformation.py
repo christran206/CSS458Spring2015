@@ -82,6 +82,11 @@ readCourses("2014-02-Winter-CSS.tsv", 2014, "winter")
 readCourses("2014-03-Spring-CSS.tsv", 2014, "spring")
 readCourses("2014-04-Summer-CSS.tsv", 2014, "summer")
 
+# read in year 2015
+readCourses("2015-01-Fall-CSS.tsv", 2015, "autumn")
+readCourses("2015-02-Winter-CSS.tsv", 2015, "winter")
+readCourses("2015-03-Spring-CSS.tsv", 2015, "spring")
+#readCourses("2015-04-Summer-CSS.tsv", 2015, "summer")
 
 # Print out entire course stored
 for quarter in courseHistory:
@@ -91,4 +96,4 @@ for quarter in courseHistory:
         for year in courseHistory[quarter][coursenum]:
             print "\t" + str(year)
             for course in courseHistory[quarter][coursenum][year]:
-                print "\t\t" + str(course.sln) + "\t" + str(course.days) + "\t" + str(course.time) + "\t" + str(course.enrolled) + "/" + str(course.capacity) + ":" + str(round(float(course.enrolled)/float(course.capacity) * 100)) + "%"
+                print "\t\t" + str(course.sln) + "\t" + str(course.days) + "\t" + str(course.time) + "\t" + str(course.enrolled) + "/" + str(course.capacity)
