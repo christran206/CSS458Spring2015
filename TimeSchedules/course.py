@@ -14,6 +14,20 @@ class Course:
         self.instructor = instructor
         self.expertise = expertise 
    
+    def __str__(self):
+       return "SLN: %s \tNumber: %s \tName: %s \tQuarter: %s \tDays: %s \t\
+       \tTime: %s \tInstructor %s \tEnrolled: %s \tCapacity: %s\t\
+       Expertise: %s\n" % (self.sln, self.number, self.name, self.quarter, \
+       self.days, self.time, self.enrolled, self.capacity, self.instructor, \
+       self.expertise)    
+   
+    def __repr__(self):
+       return "SLN: %s \tNumber: %s \tName: %s \tQuarter: %s \tDays: %s \t\
+       \tTime: %s \tInstructor %s \tEnrolled: %s \tCapacity: %s\t\
+       Expertise: %s\n" % (self.sln, self.number, self.name, self.quarter, \
+       self.days, self.time, self.enrolled, self.capacity, self.instructor, \
+       self.expertise)        
+       
 
     def courseTimeOverlap(self, course):
         """

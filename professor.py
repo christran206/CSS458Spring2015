@@ -17,3 +17,15 @@ class Professor:
         self.exp1 = exp1
         self.exp2 = exp2
         self.exp3 = exp3
+        
+    def __str__(self):
+        return "Name: %s \tFullTime: %s \tClasses: %s \tStudents: %s \t\
+        Expertise1: %s \tExpertise2: %s \tExpertise3: %s \n" %  (self.name, \
+        self.fullTime, self.classes, self.students, self.exp1, self.exp2, \
+        self.exp3)
+        
+    def __repr__(self):
+        return "Name: %s \tFullTime: %s \tClasses: %s \tStudents: %s \t\
+        Expertise1: %s \tExpertise2: %s \tExpertise3: %s \n" %  (self.name, \
+        self.fullTime, self.classes, self.students, self.exp1, self.exp2, \
+        self.exp3)
