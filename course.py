@@ -3,14 +3,14 @@ __author__ = 'Christopher'
 class Course:
 
     def __init__(self, sln, number, name, quarter, days, time, instructor, enrolled, capacity, expertise=""):
-        self.sln = int(sln) if sln is not None else 0
+        self.sln = int(sln) if sln is not None else 0  # Check valid int and default to 0
         self.number = int(number)
         self.name = name
         self.quarter = quarter
-        self.days = [day for day in days if len(day) != 0]
+        self.days = [day for day in days if len(day) != 0]  # Only include values with length more than 0
         self.time = time
-        self.enrolled = int(enrolled) if enrolled is not None and enrolled else 0
-        self.capacity = int(capacity) if capacity is not None and capacity else 15
+        self.enrolled = int(enrolled) if enrolled is not None and enrolled else 0  # enrollment has to be an int
+        self.capacity = int(capacity) if capacity is not None and capacity else 15  # Capacity has to have a value
         self.instructor = instructor
         self.expertise = expertise 
    
