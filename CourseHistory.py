@@ -1,6 +1,8 @@
 __author__ = 'Christopher'
-from course import Course
 import numpy
+
+from Course import Course
+
 
 class CourseHistory:
     DEFAULT_ENROLLMENT = 0.80 # Default enrollment percentage for a new course

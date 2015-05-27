@@ -1,5 +1,5 @@
 __author__ = 'Christopher'
-from course import Course
+from Course import Course
 
 
 courseHistory = {'autumn': {}, 'winter': {}, 'spring': {}, 'summer': {}}

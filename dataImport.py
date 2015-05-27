@@ -4,8 +4,10 @@
 ## Methods to import classes and faculty
 ##------------------------------------------------------------------------------
 import numpy as N
+
 from professor import Professor
-from TimeSchedules.course import Course
+from Course import Course
+
 
 def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
     
@@ -32,8 +34,7 @@ def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
     
     # Iterate through each row in array, creating new course objects
     for i in xrange(N.shape(courses)[0]):
-        nextCourse = Course(None, courses[i][0], None, courses[i][4], \
-        courses[i][2], courses[i][1], None, 0, courses[i][3], courses[i][5])
+        nextCourse = Course(None, courses[i][0], None, courses[i][4].lower(), courses[i][2].split("/"), courses[i][1], None, 0, courses[i][3], courses[i][5])
         
         # Append each course to the course list
         courseList.append(nextCourse)
@@ -76,5 +77,3 @@ def importFaculty(path ='faculty.csv', delimit = ',', type = 'str', header = 1):
         
     # Return professors
     return professors
-
-

@@ -45,4 +45,6 @@ courseManager.readCourses("2015-03-Spring-CSS.tsv", 2015, "spring")
 # Test with a time with no history
 print courseManager.getCourseEnrollment(342, "1315-1515", 45, "autumn") # PASS
 # Test with a time with significant history
-print courseManager.getCourseEnrollment(342, "2000-2200", 45, "autumn")
+print courseManager.getCourseEnrollment(342, "2000-2200", 45, "autumn") # PASS
+# New Course should return capacity with default value
+print courseManager.getCourseEnrollment(742, "2000-2200", 45, "autumn") # PASS
