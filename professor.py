@@ -9,23 +9,18 @@ class Professor:
     areas of expertise.
     """
 
-    def __init__(self, name, fullTime, classes, students, exp1, exp2, exp3):
+    def __init__(self, name, fullTime, classamount, students, expertise):
         self.name = name
         self.fullTime = fullTime
-        self.classes = classes
+        self.classamount = classamount
+        self.courses = []
         self.students = students
-        self.exp1 = exp1
-        self.exp2 = exp2
-        self.exp3 = exp3
+        self.expertise = expertise.split("/")
         
     def __str__(self):
-        return "Name: %s \tFullTime: %s \tClasses: %s \tStudents: %s \t\
-        Expertise1: %s \tExpertise2: %s \tExpertise3: %s \n" %  (self.name, \
-        self.fullTime, self.classes, self.students, self.exp1, self.exp2, \
-        self.exp3)
+        return "Name: %s \tFullTime: %s \tClassAmount: %s \tStudents: %s \t\
+        Expertise: %s \n" % (self.name, self.fullTime, self.classamount, self.students, self.expertise)
         
     def __repr__(self):
-        return "Name: %s \tFullTime: %s \tClasses: %s \tStudents: %s \t\
-        Expertise1: %s \tExpertise2: %s \tExpertise3: %s \n" %  (self.name, \
-        self.fullTime, self.classes, self.students, self.exp1, self.exp2, \
-        self.exp3)
+        return "Name: %s \tFullTime: %s \tClassAmount: %s \tStudents: %s \t\
+        Expertise: %s \n" % (self.name,self.fullTime, self.classamount, self.students, self.expertise)

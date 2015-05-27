@@ -70,7 +70,7 @@ def importFaculty(path ='faculty.csv', delimit = ',', type = 'str', header = 1):
     # Iterate through the faculty array, creating a professor object for each
     for i in xrange(N.shape(faculty)[0]):
         nextFac = Professor(faculty[i][0],faculty[i][1],float(faculty[i][2]), \
-        int(faculty[i][3]), faculty[i][4], faculty[i][6], faculty[i][6])
+        int(faculty[i][3]), faculty[i][4])
         
         # Append each new professor to the list of professors
         professors.append(nextFac)
