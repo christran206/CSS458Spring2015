@@ -1,6 +1,7 @@
 __author__ = 'Christopher'
 from CourseHistory import CourseHistory
 from Schedule import Schedule
+from Scheduler import Scheduler
 import dataImport
 
 # Create Course History and read all data files
@@ -48,4 +49,12 @@ importCourses = dataImport.importCourses()
 for course in importCourses:
     givenSchedule.addCourse(course, course.quarter)
 
-print givenSchedule
+importProfessors = dataImport.importFaculty()
+
+scheduler = Scheduler(givenSchedule, importProfessors)
+scheduler.fillschedule()
+
+for professor in scheduler.Professors:
+    print professor
+
+# print scheduler.Schedule

@@ -12,7 +12,7 @@ class Schedule:
     def __str__(self):
         selfString = ""
         for quarter in self.courses:
-            selfString += "=====" +  quarter + "=====" + "\n"
+            selfString += "=====" + quarter + "=====" + "\n"
             for course in self.courses[quarter]:
                 selfString += course.__str__()
         return selfString

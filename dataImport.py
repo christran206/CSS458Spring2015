@@ -9,7 +9,7 @@ from professor import Professor
 from Course import Course
 
 
-def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
+def importCourses(path='classes.csv', delimit=',', datatype='str', header=1):
     
     """
     Import courses generates a list of course objects from a data file
@@ -26,8 +26,7 @@ def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
     """
     
     # Generate an array from the input file of course details
-    courses = N.genfromtxt(path, delimiter = delimit, \
-    dtype = type, skip_header=header)
+    courses = N.genfromtxt(path, delimiter=delimit, dtype=datatype, skip_header=header)
     
     # Prepare a list of courses to return
     courseList = []
@@ -42,9 +41,7 @@ def importCourses(path ='classes.csv', delimit = ',', type = 'str', header = 1):
     # Return the list
     return courseList
 
-
-
-def importFaculty(path ='faculty.csv', delimit = ',', type = 'str', header = 1):
+def importFaculty(path='faculty.csv', delimit=',', datatype='str', header=1):
     
     """
     Import Faculty generates a list of professor objects from input file.
@@ -61,16 +58,14 @@ def importFaculty(path ='faculty.csv', delimit = ',', type = 'str', header = 1):
     """
     
     # Generate an array of data from the file at input path
-    faculty = N.genfromtxt(path, delimiter = delimit, \
-    dtype = type, skip_header=header)
+    faculty = N.genfromtxt(path, delimiter=delimit, dtype=datatype, skip_header=header)
     
     # Create a list of professors to return
     professors = []
     
     # Iterate through the faculty array, creating a professor object for each
     for i in xrange(N.shape(faculty)[0]):
-        nextFac = Professor(faculty[i][0],faculty[i][1],float(faculty[i][2]), \
-        int(faculty[i][3]), faculty[i][4])
+        nextFac = Professor(faculty[i][0], faculty[i][1] == 'Y', float(faculty[i][2]), int(faculty[i][3]), faculty[i][4])
         
         # Append each new professor to the list of professors
         professors.append(nextFac)
