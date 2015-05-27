@@ -1,7 +1,7 @@
 __author__ = 'Christopher'
 
-class Course:
 
+class Course:
     def __init__(self, sln, number, name, quarter, days, time, instructor, enrolled, capacity, expertise=""):
         self.sln = int(sln) if sln is not None else 0  # Check valid int and default to 0
         self.number = int(number)
@@ -12,22 +12,19 @@ class Course:
         self.enrolled = int(enrolled) if enrolled is not None and enrolled else 0  # enrollment has to be an int
         self.capacity = int(capacity) if capacity is not None and capacity else 15  # Capacity has to have a value
         self.instructor = instructor
-        self.expertise = expertise 
-   
+        self.expertise = expertise
+
     def __str__(self):
-       return "SLN: %s \tNumber: %s \tName: %s \tQuarter: %s \tDays: %s \t\
-       \tTime: %s \tInstructor %s \tEnrolled: %s \tCapacity: %s\t\
-       Expertise: %s\n" % (self.sln, self.number, self.name, self.quarter, \
-       self.days, self.time, self.instructor, self.enrolled, self.capacity, \
-       self.expertise)    
-   
+        return "SLN: %s\tNumber: %s\tName: %s\tQuarter: %s\tDays: %s\tTime: %s\tInstructor %s\tEnrolled: %s\t\
+        Capacity: %s\tExpertise: %s" % \
+               (self.sln, self.number, self.name, self.quarter, self.days, self.time, self.instructor.name if self.instructor is not None else None, self.enrolled,
+                self.capacity, self.expertise)
+
     def __repr__(self):
-       return "SLN: %s \tNumber: %s \tName: %s \tQuarter: %s \tDays: %s \t\
-       \tTime: %s \tInstructor %s \tEnrolled: %s \tCapacity: %s\t\
-       Expertise: %s\n" % (self.sln, self.number, self.name, self.quarter, \
-       self.days, self.time, self.instructor, self.enrolled, self.capacity, \
-       self.expertise)        
-       
+        return "SLN: %s\tNumber: %s\tName: %s\tQuarter: %s\tDays: %s\tTime: %s\tInstructor %s\tEnrolled: %s\t\
+        Capacity: %s\tExpertise: %s" % \
+               (self.sln, self.number, self.name, self.quarter, self.days, self.time, self.instructor.name if self.instructor is not None else None, self.enrolled,
+                self.capacity, self.expertise)
 
     def courseTimeOverlap(self, course):
         """
@@ -35,8 +32,15 @@ class Course:
         :param course: Course to compare against
         :return: True if the times overlap, false if they don't
         """
+        # Check if days overlap
+        daysOverlap = False
+        for day in self.days:
+            if day in course.days:
+                daysOverlap = True
+                break
+
         # Check if this course and the passed in course have a time
-        if self.time != "to be arranged" and course.time != "to be arranged":
+        if daysOverlap and self.time != "to be arranged" and course.time != "to be arranged":
             # get start and end time of this course object
             thisStart = int(self.time.split("-")[0])
             thisEnd = int(self.time.split("-")[1])

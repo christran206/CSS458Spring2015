@@ -66,3 +66,7 @@ class Scheduler:
                                 professor.teaching[quarter].append(course)
                         break
                     # break
+        # At this point, remaining courses need to be populated with available part time instructors
+        for professor in parttime:
+            # TO DO
+            print "TODO"
