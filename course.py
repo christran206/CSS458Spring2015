@@ -7,7 +7,7 @@ class Course:
         self.number = int(number)
         self.name = name
         self.quarter = quarter
-        self.days = [day for day in days if len(day) != 0]  # Only include values with length more than 0
+        self.days = [day.upper() for day in days if len(day) != 0]  # Only include values with length more than 0
         self.time = time
         self.enrolled = int(enrolled) if enrolled is not None and enrolled else 0  # enrollment has to be an int
         self.capacity = int(capacity) if capacity is not None and capacity else 15  # Capacity has to have a value

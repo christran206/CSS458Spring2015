@@ -60,3 +60,5 @@ for professor in scheduler.Professors:
 unassigned = givenSchedule.unassignedCourses()
 for course in unassigned:
     print(course)
+
+# Iterate For the next year
