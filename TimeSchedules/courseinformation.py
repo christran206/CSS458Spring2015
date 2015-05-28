@@ -1,5 +1,5 @@
 __author__ = 'Christopher'
-from Course import Course
+from course import Course
 
 
 courseHistory = {'autumn': {}, 'winter': {}, 'spring': {}, 'summer': {}}
@@ -90,7 +90,7 @@ readCourses("2015-03-Spring-CSS.tsv", 2015, "spring")
 
 # Print out entire course stored
 for quarter in courseHistory:
-    print quarter
+    print "=====" + quarter.upper() + "====="
     for coursenum in courseHistory[quarter]:
         print str(coursenum)
         for year in courseHistory[quarter][coursenum]:
