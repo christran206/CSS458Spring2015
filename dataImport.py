@@ -6,7 +6,7 @@
 import numpy as N
 
 from professor import Professor
-from Course import Course
+from course import Course
 
 
 def importCourses(path='classes.csv', delimit=',', datatype='str', header=1):

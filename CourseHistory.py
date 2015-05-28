@@ -1,7 +1,7 @@
 __author__ = 'Christopher'
 import numpy
 
-from Course import Course
+from course import Course
 
 
 class CourseHistory:
@@ -111,7 +111,7 @@ class CourseHistory:
                 # average the percentages
                 percent = sum(enrollPercent)/float(len(enrollPercent))
                 # return a discrete number using binomial random number
-                return numpy.random.binomial(courseCapacity, percent)
+                return numpy.random.binomial(courseCapacity, min(percent, 1.0))
 
         else:
             # Parse all data from all quarters

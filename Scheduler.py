@@ -3,9 +3,10 @@ import random
 
 class Scheduler:
 
-    def __init__(self, Schedule, Professors):
+    def __init__(self, Schedule, Professors, CourseHistory):
         self.Schedule = Schedule
         self.Professors = Professors
+        self.CourseHistory = CourseHistory
 
     def fillschedule(self):
         """
@@ -45,7 +46,7 @@ class Scheduler:
                     compatiblecourses = [course for course in courses if course.expertise in professor.expertise and course.instructor == None]
                     if len(compatiblecourses) == 0:
                         professorNotCompatCount += 1
-                        break
+                        continue
                     # shuffle courses 
                     random.shuffle(compatiblecourses)
                     # find a course that the professor can teach and if the professor is able to teach
@@ -64,21 +65,20 @@ class Scheduler:
                             if professor.classamount - allotment >= 1.0:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
+                        course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         break
                     # break
         # At this point, remaining courses need to be populated with available part time instructors
+        # shuffle professors
+        random.shuffle(parttime)
+
         for professor in parttime:
-            # TO DO
-            break
-            #shuffle professors
-            random.shuffle(parttime)
-            # iterate through professors
-            remainingProfs = len(parttime)
-            professorNotCompatCount = [0 for i in xrange(len(parttime))]
-            i = -1
-            while remainingProfs > 0:
-                for professor in parttime:
-                    i = (i + 1) % len(parttime)
+            # loop until professor is full of courses
+            professorAvailable = True
+            professorNotCompatCount = 0
+            while professorAvailable:
+                # Select one class from each quarter at a time
+                for quarter in self.Schedule.courses:
                     # get the current course allotment of the professor
                     allotment = 0
                     for coursequarter in professor.teaching:
@@ -90,15 +90,16 @@ class Scheduler:
                                 allotment += 1.0
                     # if the professor can't teach anymore, break loop to the next professor
                     # Also check if the professor has gone through 4 loops without compatible courses
-                    if allotment >= professor.classamount or professorNotCompatCount[i] >= 4:
-                        remainingProfs -= 1
-                        continue
+                    if allotment >= professor.classamount or professorNotCompatCount == 4:
+                        professorAvailable = False
+                        break
+                    courses = self.Schedule.courses[quarter]
                     # get only courses where professor has an expertise
                     compatiblecourses = [course for course in courses if course.expertise in professor.expertise and course.instructor == None]
                     if len(compatiblecourses) == 0:
                         professorNotCompatCount += 1
                         continue
-                    # shuffle courses 
+                    # shuffle courses
                     random.shuffle(compatiblecourses)
                     # find a course that the professor can teach and if the professor is able to teach
                     # check if professor has reached the limit
@@ -116,5 +117,5 @@ class Scheduler:
                             if professor.classamount - allotment >= 1.0:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
+                        course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         break
-                        

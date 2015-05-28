@@ -51,10 +51,12 @@ for course in importCourses:
 
 importProfessors = dataImport.importFaculty()
 
-scheduler = Scheduler(givenSchedule, importProfessors)
+scheduler = Scheduler(givenSchedule, importProfessors, history)
 scheduler.fillschedule()
 
 for professor in scheduler.Professors:
     print professor
 
-# print scheduler.Schedule
+unassigned = givenSchedule.unassignedCourses()
+for course in unassigned:
+    print(course)
