@@ -145,3 +145,17 @@ class CourseHistory:
                     print "\t" + str(year)
                     for course in self.courseData[quarter][coursenum][year]:
                         print "\t\t" + str(course.sln) + "\t" + str(course.days) + "\t" + str(course.time) + "\t" + str(course.enrolled) + "/" + str(course.capacity)
+
+    def studentEnrollmentHistory(self):
+        capstonecourses = [499, 498, 497, 198, 199, 600, 700]
+        enrollmentYears = {}
+        for quarter in self.courseData:
+            for coursenum in self.courseData[quarter]:
+                for year in self.courseData[quarter][coursenum]:
+                    for course in self.courseData[quarter][coursenum][year]:
+                        if year not in enrollmentYears:
+                            enrollmentYears[year] = [0, 0]
+                        if course.number not in capstonecourses:
+                            enrollmentYears[year][0] += course.enrolled
+                            enrollmentYears[year][1] += course.capacity
+        return enrollmentYears
