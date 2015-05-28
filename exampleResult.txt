@@ -1,0 +1,343 @@
+==============COURSE HISTORY==============
+2010
+	Enrolled: 1570	Total Capacity: 2309	68.0%
+2011
+	Enrolled: 1770	Total Capacity: 2590	68.3%
+2012
+	Enrolled: 2355	Total Capacity: 3323	70.9%
+2013
+	Enrolled: 3185	Total Capacity: 4314	73.8%
+2014
+	Enrolled: 4026	Total Capacity: 5788	69.6%
+2015
+	Enrolled: 3153	Total Capacity: 5893	53.5%
+==============PROFESSORS AND COURSES==============
+Name: Anscombe 	FullTime: True 	ClassAmount: 7.5 	Students: 2 	Expertise: ['Programming', 'Scientific Computing']
+=autumn
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1315-1515	Instructor Anscombe	Enrolled: 41	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 455	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1530-1730	Instructor Anscombe	Enrolled: 12	        Capacity: 45	Expertise: Scientific Computing
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 845-1045	Instructor Anscombe	Enrolled: 38	        Capacity: 45	Expertise: Programming
+=spring
+SLN: 0	Number: 343	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1530-1730	Instructor Anscombe	Enrolled: 26	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['F']	Time: 1130-1400	Instructor Anscombe	Enrolled: 39	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1100-1300	Instructor Anscombe	Enrolled: 41	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 2000-2200	Instructor Anscombe	Enrolled: 28	        Capacity: 45	Expertise: Programming
+=winter
+SLN: 0	Number: 343	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1530-1730	Instructor Anscombe	Enrolled: 54	        Capacity: 60	Expertise: Programming
+SLN: 0	Number: 502	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1800-1940	Instructor Anscombe	Enrolled: 17	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['F']	Time: 1130-1400	Instructor Anscombe	Enrolled: 42	        Capacity: 45	Expertise: Programming
+=summer
+SLN: 0	Number: 162	Name: None	Quarter: summer	Days: ['T']	Time: 1800-2030	Instructor Anscombe	Enrolled: 17	        Capacity: 30	Expertise: Programming
+
+Name: Boyle 	FullTime: True 	ClassAmount: 5.0 	Students: 1 	Expertise: ['Programming', 'Software Engineering']
+=autumn
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1315-1515	Instructor Boyle	Enrolled: 36	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 342	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1745-1945	Instructor Boyle	Enrolled: 37	        Capacity: 65	Expertise: Programming
+=spring
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['TH']	Time: 1745-2015	Instructor Boyle	Enrolled: 25	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['T']	Time: 1745-2015	Instructor Boyle	Enrolled: 27	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1745-1945	Instructor Boyle	Enrolled: 32	        Capacity: 45	Expertise: Programming
+=winter
+SLN: 0	Number: 507	Name: None	Quarter: winter	Days: ['M']	Time: 2000-2200	Instructor Boyle	Enrolled: 21	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 350	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1530-1730	Instructor Boyle	Enrolled: 26	        Capacity: 60	Expertise: Software Engineering
+=summer
+
+Name: Carnesale 	FullTime: True 	ClassAmount: 5.0 	Students: 1 	Expertise: ['Programming', 'Software Engineering', 'Operating Systems']
+=autumn
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1100-1300	Instructor Carnesale	Enrolled: 41	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor Carnesale	Enrolled: 37	        Capacity: 45	Expertise: Programming
+=spring
+SLN: 0	Number: 332	Name: None	Quarter: spring	Days: ['F']	Time: 1315-1715	Instructor Carnesale	Enrolled: 27	        Capacity: 90	Expertise: Programming
+SLN: 0	Number: 107	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1315-1515	Instructor Carnesale	Enrolled: 45	        Capacity: 45	Expertise: Programming
+=winter
+SLN: 0	Number: 507	Name: None	Quarter: winter	Days: ['T']	Time: 2000-2200	Instructor Carnesale	Enrolled: 21	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['F']	Time: 845-1115	Instructor Carnesale	Enrolled: 44	        Capacity: 45	Expertise: Programming
+=summer
+SLN: 0	Number: 162	Name: None	Quarter: summer	Days: ['M', 'W']	Time: 1800-2020	Instructor Carnesale	Enrolled: 22	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: summer	Days: ['T']	Time: 1430-1700	Instructor Carnesale	Enrolled: 19	        Capacity: 30	Expertise: Programming
+
+Name: Dinkins 	FullTime: True 	ClassAmount: 2.0 	Students: 3 	Expertise: ['Programming', 'Scientific Computing', 'Hardware']
+=autumn
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['F']	Time: 1430-1700	Instructor Dinkins	Enrolled: 40	        Capacity: 45	Expertise: Programming
+=spring
+SLN: 0	Number: 448	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 2000-2200	Instructor Dinkins	Enrolled: 12	        Capacity: 45	Expertise: Programming
+=winter
+=summer
+SLN: 0	Number: 161	Name: None	Quarter: summer	Days: ['M', 'W']	Time: 1430-1650	Instructor Dinkins	Enrolled: 17	        Capacity: 30	Expertise: Programming
+
+Name: Epstein 	FullTime: True 	ClassAmount: 7.0 	Students: 1 	Expertise: ['Programming', 'Cybersecurity']
+=autumn
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['F']	Time: 845-1115	Instructor Epstein	Enrolled: 38	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 501	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1800-1940	Instructor Epstein	Enrolled: 17	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 515	Name: None	Quarter: autumn	Days: ['T']	Time: 2000-2200	Instructor Epstein	Enrolled: 23	        Capacity: 30	Expertise: Cybersecurity
+=spring
+SLN: 0	Number: 342	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 2000-2200	Instructor Epstein	Enrolled: 43	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['F']	Time: 845-1115	Instructor Epstein	Enrolled: 35	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 845-1045	Instructor Epstein	Enrolled: 31	        Capacity: 45	Expertise: Programming
+=winter
+SLN: 0	Number: 514	Name: None	Quarter: winter	Days: ['W']	Time: 2000-2200	Instructor Epstein	Enrolled: 6	        Capacity: 30	Expertise: Cybersecurity
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['F']	Time: 1130-1400	Instructor Epstein	Enrolled: 43	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 337	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor Epstein	Enrolled: 41	        Capacity: 45	Expertise: Cybersecurity
+=summer
+
+Name: Franklin 	FullTime: True 	ClassAmount: 2.0 	Students: 3 	Expertise: ['Cybersecurity']
+=autumn
+SLN: 0	Number: 310	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 2000-2200	Instructor Franklin	Enrolled: 45	        Capacity: 45	Expertise: Cybersecurity
+=spring
+SLN: 0	Number: 539	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 2000-2200	Instructor Franklin	Enrolled: 21	        Capacity: 30	Expertise: Cybersecurity
+=winter
+=summer
+
+Name: Goss 	FullTime: True 	ClassAmount: 7.0 	Students: 3 	Expertise: ['Cybersecurity', 'Software Engineering']
+=autumn
+SLN: 0	Number: 360	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor Goss	Enrolled: 38	        Capacity: 45	Expertise: Software Engineering
+SLN: 0	Number: 509	Name: None	Quarter: autumn	Days: ['TH']	Time: 2000-2200	Instructor Goss	Enrolled: 14	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 506	Name: None	Quarter: autumn	Days: ['M']	Time: 2000-2200	Instructor Goss	Enrolled: 16	        Capacity: 30	Expertise: Software Engineering
+=spring
+SLN: 0	Number: 415	Name: None	Quarter: spring	Days: ['TTH']	Time: 1530-1730	Instructor Goss	Enrolled: 15	        Capacity: 45	Expertise: Cybersecurity
+SLN: 0	Number: 553	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1745-1945	Instructor Goss	Enrolled: 28	        Capacity: 30	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 555	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor Goss	Enrolled: 23	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 370	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1315-1515	Instructor Goss	Enrolled: 42	        Capacity: 60	Expertise: Software Engineering
+=summer
+
+Name: Hall 	FullTime: True 	ClassAmount: 5.0 	Students: 1 	Expertise: ['Writing']
+=autumn
+SLN: 0	Number: 301	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1100-1300	Instructor Hall	Enrolled: 47	        Capacity: 60	Expertise: Writing
+SLN: 0	Number: 301	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor Hall	Enrolled: 23	        Capacity: 30	Expertise: Writing
+=spring
+SLN: 0	Number: 301	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1315-1515	Instructor Hall	Enrolled: 23	        Capacity: 30	Expertise: Writing
+=winter
+SLN: 0	Number: 301	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1315-1515	Instructor Hall	Enrolled: 29	        Capacity: 30	Expertise: Writing
+=summer
+SLN: 0	Number: 301	Name: None	Quarter: summer	Days: ['M', 'W']	Time: 900-1120	Instructor Hall	Enrolled: 21	        Capacity: 30	Expertise: Writing
+
+Name: Ing 	FullTime: True 	ClassAmount: 4.0 	Students: 1 	Expertise: ['Writing', 'Databases']
+=autumn
+SLN: 0	Number: 475	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1745-1945	Instructor Ing	Enrolled: 40	        Capacity: 45	Expertise: Databases
+=spring
+SLN: 0	Number: 301	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1530-1730	Instructor Ing	Enrolled: 25	        Capacity: 30	Expertise: Writing
+=winter
+SLN: 0	Number: 301	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 845-1045	Instructor Ing	Enrolled: 29	        Capacity: 30	Expertise: Writing
+=summer
+SLN: 0	Number: 475	Name: None	Quarter: summer	Days: ['M']	Time: 1800-2020	Instructor Ing	Enrolled: 58	        Capacity: 60	Expertise: Databases
+
+Name: Jenkins 	FullTime: True 	ClassAmount: 5.0 	Students: 3 	Expertise: ['Hardware', 'Software Engineering']
+=autumn
+SLN: 0	Number: 517	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1745-1945	Instructor Jenkins	Enrolled: 8	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 360	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1530-1730	Instructor Jenkins	Enrolled: 22	        Capacity: 45	Expertise: Software Engineering
+=spring
+SLN: 0	Number: 519	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1745-1945	Instructor Jenkins	Enrolled: 8	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 360	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1745-1945	Instructor Jenkins	Enrolled: 41	        Capacity: 45	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 510	Name: None	Quarter: winter	Days: ['TH']	Time: 2000-2200	Instructor Jenkins	Enrolled: 0	        Capacity: 10	Expertise: Software Engineering
+=summer
+
+Name: Klasse 	FullTime: True 	ClassAmount: 6.0 	Students: 4 	Expertise: ['Hardware']
+=autumn
+SLN: 0	Number: 422	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1530-1730	Instructor Klasse	Enrolled: 30	        Capacity: 45	Expertise: Hardware
+SLN: 0	Number: 422	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1530-1730	Instructor Klasse	Enrolled: 37	        Capacity: 45	Expertise: Hardware
+=spring
+SLN: 0	Number: 428	Name: None	Quarter: spring	Days: ['F']	Time: 1430-1730	Instructor Klasse	Enrolled: 6	        Capacity: 45	Expertise: Hardware
+SLN: 0	Number: 422	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1745-1945	Instructor Klasse	Enrolled: 41	        Capacity: 45	Expertise: Hardware
+=winter
+SLN: 0	Number: 421	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor Klasse	Enrolled: 6	        Capacity: 20	Expertise: Hardware
+SLN: 0	Number: 422	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1530-1730	Instructor Klasse	Enrolled: 35	        Capacity: 45	Expertise: Hardware
+=summer
+
+Name: Lingonberry 	FullTime: True 	ClassAmount: 8.0 	Students: 3 	Expertise: ['Networking', 'Operating Systems']
+=autumn
+SLN: 0	Number: 430	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1530-1730	Instructor Lingonberry	Enrolled: 40	        Capacity: 45	Expertise: Operating Systems
+=spring
+SLN: 0	Number: 432	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1745-1945	Instructor Lingonberry	Enrolled: 40	        Capacity: 45	Expertise: Networking
+SLN: 0	Number: 430	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 2000-2200	Instructor Lingonberry	Enrolled: 28	        Capacity: 45	Expertise: Operating Systems
+SLN: 0	Number: 430	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1315-1515	Instructor Lingonberry	Enrolled: 28	        Capacity: 45	Expertise: Operating Systems
+=winter
+SLN: 0	Number: 432	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor Lingonberry	Enrolled: 34	        Capacity: 45	Expertise: Networking
+SLN: 0	Number: 430	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1530-1730	Instructor Lingonberry	Enrolled: 57	        Capacity: 60	Expertise: Operating Systems
+=summer
+SLN: 0	Number: 430	Name: None	Quarter: summer	Days: ['M', 'W']	Time: 1145-1405	Instructor Lingonberry	Enrolled: 10	        Capacity: 10	Expertise: Operating Systems
+
+Name: Marcus 	FullTime: True 	ClassAmount: 1.0 	Students: 1 	Expertise: ['Networking', 'Software Engineering']
+=autumn
+SLN: 0	Number: 506	Name: None	Quarter: autumn	Days: ['T']	Time: 2000-2200	Instructor Marcus	Enrolled: 23	        Capacity: 30	Expertise: Software Engineering
+=spring
+=winter
+=summer
+
+Name: Norbert 	FullTime: True 	ClassAmount: 4.0 	Students: 4 	Expertise: ['Databases', 'Software Engineering']
+=autumn
+SLN: 0	Number: 360	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1315-1515	Instructor Norbert	Enrolled: 32	        Capacity: 45	Expertise: Software Engineering
+SLN: 0	Number: 383	Name: None	Quarter: autumn	Days: ['F']	Time: 1300-1500	Instructor Norbert	Enrolled: 14	        Capacity: 45	Expertise: Databases
+=spring
+SLN: 0	Number: 566	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 2000-2200	Instructor Norbert	Enrolled: 12	        Capacity: 30	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 475	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1315-1515	Instructor Norbert	Enrolled: 34	        Capacity: 45	Expertise: Databases
+=summer
+
+Name: Olmeda 	FullTime: True 	ClassAmount: 5.0 	Students: 4 	Expertise: ['Software Engineering', 'Operating Systems']
+=autumn
+SLN: 0	Number: 474	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor Olmeda	Enrolled: 32	        Capacity: 45	Expertise: Software Engineering
+=spring
+SLN: 0	Number: 350	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1745-1945	Instructor Olmeda	Enrolled: 41	        Capacity: 45	Expertise: Software Engineering
+SLN: 0	Number: 510	Name: None	Quarter: spring	Days: ['TH']	Time: 2000-2200	Instructor Olmeda	Enrolled: 3	        Capacity: 10	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 360	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1530-1730	Instructor Olmeda	Enrolled: 41	        Capacity: 45	Expertise: Software Engineering
+SLN: 0	Number: 360	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor Olmeda	Enrolled: 27	        Capacity: 45	Expertise: Software Engineering
+=summer
+
+Name: Price 	FullTime: True 	ClassAmount: 3.0 	Students: 3 	Expertise: ['Software Engineering', 'Hardware']
+=autumn
+SLN: 0	Number: 370	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1745-1945	Instructor Price	Enrolled: 40	        Capacity: 60	Expertise: Software Engineering
+=spring
+SLN: 0	Number: 508	Name: None	Quarter: spring	Days: ['M']	Time: 2000-2200	Instructor Price	Enrolled: 22	        Capacity: 30	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 350	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1315-1515	Instructor Price	Enrolled: 59	        Capacity: 60	Expertise: Software Engineering
+=summer
+
+Name: Quine 	FullTime: True 	ClassAmount: 4.0 	Students: 2 	Expertise: ['Software Engineering', 'Computer Engineering']
+=autumn
+SLN: 0	Number: 572	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 2000-2200	Instructor Quine	Enrolled: 0	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 350	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1530-1730	Instructor Quine	Enrolled: 49	        Capacity: 60	Expertise: Software Engineering
+=spring
+SLN: 0	Number: 509	Name: None	Quarter: spring	Days: ['T']	Time: 2000-2200	Instructor Quine	Enrolled: 4	        Capacity: 10	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 565	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor Quine	Enrolled: 23	        Capacity: 30	Expertise: Software Engineering
+=summer
+
+Name: Ralston 	FullTime: False 	ClassAmount: 1.0 	Students: 0 	Expertise: ['Computer Engineering', 'Hardware']
+=autumn
+=spring
+SLN: 0	Number: 422	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1315-1515	Instructor Ralston	Enrolled: 37	        Capacity: 45	Expertise: Hardware
+=winter
+=summer
+
+Name: Simpson 	FullTime: False 	ClassAmount: 1.0 	Students: 0 	Expertise: ['Teaching']
+=autumn
+SLN: 0	Number: 405	Name: None	Quarter: autumn	Days: ['T']	Time: 1615-1705	Instructor Simpson	Enrolled: 5	        Capacity: 20	Expertise: Teaching
+=spring
+=winter
+=summer
+
+Name: Thomas 	FullTime: False 	ClassAmount: 1.0 	Students: 0 	Expertise: ['Teaching']
+=autumn
+SLN: 0	Number: 371	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor Thomas	Enrolled: 38	        Capacity: 45	Expertise: Teaching
+=spring
+=winter
+=summer
+
+Name: Ungit 	FullTime: False 	ClassAmount: 1.5 	Students: 1 	Expertise: ['Programming', 'Computer Engineering', 'Hardware']
+=autumn
+SLN: 0	Number: 457	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1100-1300	Instructor Ungit	Enrolled: 32	        Capacity: 45	Expertise: Programming
+=spring
+=winter
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1100-1300	Instructor Ungit	Enrolled: 42	        Capacity: 45	Expertise: Programming
+=summer
+
+Name: Veeneman 	FullTime: False 	ClassAmount: 1.0 	Students: 0 	Expertise: ['Programming']
+=autumn
+SLN: 0	Number: 342	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 2000-2200	Instructor Veeneman	Enrolled: 51	        Capacity: 65	Expertise: Programming
+=spring
+=winter
+=summer
+
+Name: White 	FullTime: False 	ClassAmount: 6.0 	Students: 0 	Expertise: ['Programming', 'Cybersecurity']
+=autumn
+SLN: 0	Number: 341	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1315-1515	Instructor White	Enrolled: 27	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 343	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1530-1730	Instructor White	Enrolled: 51	        Capacity: 60	Expertise: Programming
+=spring
+SLN: 0	Number: 342	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1530-1730	Instructor White	Enrolled: 25	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 503	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1800-1940	Instructor White	Enrolled: 24	        Capacity: 30	Expertise: Programming
+=winter
+SLN: 0	Number: 502	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1800-1940	Instructor White	Enrolled: 19	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 343	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 2000-2200	Instructor White	Enrolled: 51	        Capacity: 60	Expertise: Programming
+=summer
+
+Name: Xong 	FullTime: False 	ClassAmount: 1.0 	Students: 0 	Expertise: ['Programming', 'Software Engineering']
+=autumn
+SLN: 0	Number: 107	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 845-1045	Instructor Xong	Enrolled: 41	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['F']	Time: 1130-1400	Instructor Xong	Enrolled: 40	        Capacity: 45	Expertise: Programming
+=spring
+=winter
+=summer
+
+Name: Yttrium 	FullTime: False 	ClassAmount: 0.5 	Students: 0 	Expertise: ['Graphics', 'Software Engineering']
+=autumn
+=spring
+=winter
+=summer
+
+Name: Zelda 	FullTime: False 	ClassAmount: 2.0 	Students: 0 	Expertise: ['Graphics', 'Software Engineering']
+=autumn
+=spring
+SLN: 0	Number: 370	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1530-1730	Instructor Zelda	Enrolled: 45	        Capacity: 45	Expertise: Software Engineering
+=winter
+SLN: 0	Number: 451	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1530-1730	Instructor Zelda	Enrolled: 26	        Capacity: 45	Expertise: Graphics
+=summer
+
+Name: Zorro 	FullTime: False 	ClassAmount: 1.0 	Students: 1 	Expertise: ['Operating Systems', 'Software Engineering']
+=autumn
+=spring
+SLN: 0	Number: 480	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1745-1945	Instructor Zorro	Enrolled: 45	        Capacity: 45	Expertise: Software Engineering
+=winter
+=summer
+
+Name: Zane 	FullTime: False 	ClassAmount: 1.5 	Students: 2 	Expertise: ['Programming']
+=autumn
+SLN: 0	Number: 332	Name: None	Quarter: autumn	Days: ['F']	Time: 1315-1715	Instructor Zane	Enrolled: 42	        Capacity: 90	Expertise: Programming
+=spring
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1315-1515	Instructor Zane	Enrolled: 37	        Capacity: 45	Expertise: Programming
+=winter
+=summer
+
+==============UNASSIGNED COURSES==============
+SLN: 0	Number: 295	Name: None	Quarter: autumn	Days: ['W']	Time: 1315-1515	Instructor None	Enrolled: 0	        Capacity: 10	Expertise: Teaching
+SLN: 0	Number: 527	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Cybersecurity
+SLN: 0	Number: 533	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 579	Name: None	Quarter: autumn	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Cybersecurity
+SLN: 0	Number: 301	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1100-1300	Instructor None	Enrolled: 0	        Capacity: 60	Expertise: Writing
+SLN: 0	Number: 301	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Writing
+SLN: 0	Number: 501	Name: None	Quarter: autumn	Days: ['T', 'TH']	Time: 1800-1940	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: autumn	Days: ['T']	Time: 1530-1800	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 225	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1530-1730	Instructor None	Enrolled: 15	        Capacity: 30	Expertise: Hardware
+SLN: 0	Number: 295	Name: None	Quarter: spring	Days: ['W']	Time: 1315-1515	Instructor None	Enrolled: 0	        Capacity: 10	Expertise: Teaching
+SLN: 0	Number: 371	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Teaching
+SLN: 0	Number: 385	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 411	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1315-1515	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Teaching
+SLN: 0	Number: 434	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 458	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Scientific Computing
+SLN: 0	Number: 475	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Databases
+SLN: 0	Number: 578	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Cybersecurity
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 405	Name: None	Quarter: spring	Days: ['TH']	Time: 1315-1405	Instructor None	Enrolled: 0	        Capacity: 20	Expertise: Teaching
+SLN: 0	Number: 428	Name: None	Quarter: spring	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Computer Engineering
+SLN: 0	Number: 503	Name: None	Quarter: spring	Days: ['T', 'TH']	Time: 1800-1940	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Programming
+SLN: 0	Number: 508	Name: None	Quarter: spring	Days: ['T']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 161	Name: None	Quarter: spring	Days: ['F']	Time: 1415-1645	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 107	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1315-1515	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 211	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Teaching
+SLN: 0	Number: 290	Name: None	Quarter: winter	Days: ['W']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 10	Expertise: Teaching
+SLN: 0	Number: 295	Name: None	Quarter: winter	Days: ['W']	Time: 1315-1515	Instructor None	Enrolled: 0	        Capacity: 10	Expertise: Teaching
+SLN: 0	Number: 332	Name: None	Quarter: winter	Days: ['F']	Time: 1315-1715	Instructor None	Enrolled: 64	        Capacity: 90	Expertise: Programming
+SLN: 0	Number: 473	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Teaching
+SLN: 0	Number: 537	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Cybersecurity
+SLN: 0	Number: 538	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Cybersecurity
+SLN: 0	Number: 552	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Graphics
+SLN: 0	Number: 577	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Software Engineering
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1530-1730	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 845-1045	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1100-1300	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 405	Name: None	Quarter: winter	Days: ['M']	Time: 1530-1620	Instructor None	Enrolled: 0	        Capacity: 20	Expertise: Teaching
+SLN: 0	Number: 301	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1315-1515	Instructor None	Enrolled: 0	        Capacity: 30	Expertise: Writing
+SLN: 0	Number: 342	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 35	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 342	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 2000-2200	Instructor None	Enrolled: 13	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 370	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 1745-1945	Instructor None	Enrolled: 44	        Capacity: 60	Expertise: Software Engineering
+SLN: 0	Number: 427	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 15	Expertise: Computer Engineering
+SLN: 0	Number: 427	Name: None	Quarter: winter	Days: ['F']	Time: 1430-1730	Instructor None	Enrolled: 0	        Capacity: 15	Expertise: Computer Engineering
+SLN: 0	Number: 427	Name: None	Quarter: winter	Days: ['M', 'W']	Time: 1745-1945	Instructor None	Enrolled: 0	        Capacity: 15	Expertise: Computer Engineering
+SLN: 0	Number: 427	Name: None	Quarter: winter	Days: ['F']	Time: 1430-1730	Instructor None	Enrolled: 0	        Capacity: 15	Expertise: Computer Engineering
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['T', 'TH']	Time: 845-1045	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['F']	Time: 1415-1645	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 161	Name: None	Quarter: winter	Days: ['T']	Time: 1745-2015	Instructor None	Enrolled: 0	        Capacity: 45	Expertise: Programming
+SLN: 0	Number: 509	Name: None	Quarter: winter	Days: ['T']	Time: 2000-2200	Instructor None	Enrolled: 0	        Capacity: 10	Expertise: Software Engineering

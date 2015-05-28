@@ -53,9 +53,13 @@ class Scheduler:
                     # check if professor has reached the limit
                     for course in compatiblecourses:
                         # check if the course overlaps with any existing professor courses in the quarter
+                        courseConflict = False
                         for existingcourse in professor.teaching[quarter]:
                             if course.courseTimeOverlap(existingcourse):
-                                continue
+                                courseConflict = True
+                                break
+                        if courseConflict:
+                            continue
                         courseLevel = course.number/100
                         if courseLevel == 1:
                             if professor.classamount - allotment >= 0.5:
@@ -105,9 +109,13 @@ class Scheduler:
                     # check if professor has reached the limit
                     for course in compatiblecourses:
                         # check if the course overlaps with any existing professor courses in the quarter
+                        courseConflict = False
                         for existingcourse in professor.teaching[quarter]:
                             if course.courseTimeOverlap(existingcourse):
-                                continue
+                                courseConflict = True
+                                break
+                        if courseConflict:
+                            continue
                         courseLevel = course.number/100
                         if courseLevel == 1:
                             if professor.classamount - allotment >= 0.5:

@@ -44,6 +44,7 @@ history.readCourses(".\\TimeSchedules\\2015-03-Spring-CSS.tsv", 2015, "spring")
 
 # print out enrollment history values for each year
 enrollHistory = history.studentEnrollmentHistory()
+print "==============COURSE HISTORY=============="
 for year in enrollHistory:
     print year
     print "\tEnrolled: " + str(enrollHistory[year][0]) + "\tTotal Capacity: " + str(enrollHistory[year][1]) + "\t" + str(round(float(enrollHistory[year][0])/float(enrollHistory[year][1]) * 100, 1)) + "%"
@@ -60,9 +61,11 @@ importProfessors = dataImport.importFaculty()
 scheduler = Scheduler(givenSchedule, importProfessors, history)
 scheduler.fillschedule()
 
+print "==============PROFESSORS AND COURSES=============="
 for professor in scheduler.Professors:
     print professor
 
+print "==============UNASSIGNED COURSES=============="
 unassigned = givenSchedule.unassignedCourses()
 for course in unassigned:
     print(course)
