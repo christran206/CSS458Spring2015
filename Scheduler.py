@@ -2,6 +2,7 @@ __author__ = 'Christopher'
 import random
 
 class Scheduler:
+    QUARTERS = ["autumn", "spring", "winter", "summer"]
 
     def __init__(self, Schedule, Professors, CourseHistory):
         self.Schedule = Schedule
@@ -22,11 +23,15 @@ class Scheduler:
         # iterate through professors
         for professor in fulltime:
             # loop until professor is full of courses
+            firstRun = True
             professorAvailable = True
             professorNotCompatCount = 0
+            tempquarter = self.QUARTERS
             while professorAvailable:
                 # Select one class from each quarter at a time
-                for quarter in self.Schedule.courses:
+                if not firstRun:
+                    random.shuffle(tempquarter)
+                for quarter in tempquarter:
                     # get the current course allotment of the professor
                     allotment = 0
                     for coursequarter in professor.teaching:
@@ -72,17 +77,22 @@ class Scheduler:
                         course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         break
                     # break
+                firstRun = False
         # At this point, remaining courses need to be populated with available part time instructors
         # shuffle professors
         random.shuffle(parttime)
 
         for professor in parttime:
             # loop until professor is full of courses
+            firstRun = True
             professorAvailable = True
             professorNotCompatCount = 0
+            tempquarter = self.QUARTERS
             while professorAvailable:
                 # Select one class from each quarter at a time
-                for quarter in self.Schedule.courses:
+                if not firstRun:
+                    random.shuffle(tempquarter)
+                for quarter in tempquarter:
                     # get the current course allotment of the professor
                     allotment = 0
                     for coursequarter in professor.teaching:
@@ -127,3 +137,4 @@ class Scheduler:
                                 professor.teaching[quarter].append(course)
                         course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         break
+                firstRun = False

@@ -70,4 +70,6 @@ unassigned = givenSchedule.unassignedCourses()
 for course in unassigned:
     print(course)
 
+print len(unassigned)
+
 # Iterate For the next year

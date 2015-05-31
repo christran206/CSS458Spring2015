@@ -35,7 +35,7 @@ courseManager.readCourses("2014-03-Spring-CSS.tsv", 2014, "spring")
 courseManager.readCourses("2014-04-Summer-CSS.tsv", 2014, "summer")
 
 # read in year 2015
-courseManager.readCourses("2015-01-Fall-CSS.tsv", 2015, "autumn")
+# courseManager.readCourses("2015-01-Fall-CSS.tsv", 2015, "autumn")
 courseManager.readCourses("2015-02-Winter-CSS.tsv", 2015, "winter")
 courseManager.readCourses("2015-03-Spring-CSS.tsv", 2015, "spring")
 

@@ -130,7 +130,7 @@ class CourseHistory:
                 for course in allCourses:
                     enrollPercent.append(float(course.enrolled)/float(course.capacity))
                 percent = sum(enrollPercent)/float(len(enrollPercent))
-                return numpy.random.binomial(courseCapacity, percent)
+                return numpy.random.binomial(courseCapacity, min(percent, 1))
             else:
                 # This is a new course, return a default value
                 return numpy.random.binomial(courseCapacity, self.DEFAULT_ENROLLMENT)
