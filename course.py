@@ -26,6 +26,9 @@ class Course:
                (self.sln, self.number, self.name, self.quarter, self.days, self.time, self.instructor.name if self.instructor is not None else None, self.enrolled,
                 self.capacity, self.expertise)
 
+    def __lt__(self, other):
+        return self.number < other.number
+
     def courseTimeOverlap(self, course):
         """
         Determines if two courses overlap in time

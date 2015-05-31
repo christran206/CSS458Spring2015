@@ -55,11 +55,12 @@ givenSchedule = Schedule()
 importCourses = dataImport.importCourses()
 for course in importCourses:
     givenSchedule.addCourse(course, course.quarter)
+givenSchedule.sortQuarters()
 
 importProfessors = dataImport.importFaculty()
 
 scheduler = Scheduler(givenSchedule, importProfessors, history)
-scheduler.randomScheduling(iterations=250)
+scheduler.randomScheduling(iterations=200)
 
 print "==============PROFESSORS AND COURSES=============="
 for professor in scheduler.Professors:
@@ -72,4 +73,5 @@ for course in unassigned:
 
 print len(unassigned)
 
+print(givenSchedule)
 # Iterate For the next year
