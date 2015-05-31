@@ -1,5 +1,7 @@
 __author__ = 'Christopher'
 import random
+import copy
+import sys
 
 class Scheduler:
     QUARTERS = ["autumn", "spring", "winter", "summer"]
@@ -8,15 +10,24 @@ class Scheduler:
         self.Schedule = Schedule
         self.Professors = Professors
         self.CourseHistory = CourseHistory
+        self.OriginalSchedule = copy.deepcopy(Schedule)
+        self.OriginalProfessors = copy.deepcopy(Professors)
+
+    def randomScheduling(self, iterations=500):
+        for i in range(iterations):
+            self.fillschedule()
 
     def fillschedule(self):
         """
         Takes the Schedule and Professors and fills the courses with professors if possible
         :return: None
         """
+        tempSchedule = copy.deepcopy(self.OriginalSchedule)
+        tempProfessors = copy.deepcopy(self.OriginalProfessors)
+
         # make lists of full-time and part time professors
-        fulltime = [professor for professor in self.Professors if professor.fullTime]
-        parttime = [professor for professor in self.Professors if not professor.fullTime]
+        fulltime = [professor for professor in tempProfessors if professor.fullTime]
+        parttime = [professor for professor in tempProfessors if not professor.fullTime]
 
         # shuffle professors
         random.shuffle(fulltime)
@@ -46,7 +57,7 @@ class Scheduler:
                     if allotment >= professor.classamount or professorNotCompatCount == 4:
                         professorAvailable = False
                         break
-                    courses = self.Schedule.courses[quarter]
+                    courses = tempSchedule.courses[quarter]
                     # get only courses where professor has an expertise
                     compatiblecourses = [course for course in courses if course.expertise in professor.expertise and course.instructor == None]
                     if len(compatiblecourses) == 0:
@@ -70,11 +81,12 @@ class Scheduler:
                             if professor.classamount - allotment >= 0.5:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
+                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         else:
                             if professor.classamount - allotment >= 1.0:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
-                        course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
+                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         break
                     # break
                 firstRun = False
@@ -107,7 +119,7 @@ class Scheduler:
                     if allotment >= professor.classamount or professorNotCompatCount == 4:
                         professorAvailable = False
                         break
-                    courses = self.Schedule.courses[quarter]
+                    courses = tempSchedule.courses[quarter]
                     # get only courses where professor has an expertise
                     compatiblecourses = [course for course in courses if course.expertise in professor.expertise and course.instructor == None]
                     if len(compatiblecourses) == 0:
@@ -131,10 +143,15 @@ class Scheduler:
                             if professor.classamount - allotment >= 0.5:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
+                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         else:
                             if professor.classamount - allotment >= 1.0:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
-                        course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
+                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
+
                         break
                 firstRun = False
+        if len(tempSchedule.unassignedCourses()) < len(self.Schedule.unassignedCourses()):
+            self.Schedule.courses = tempSchedule.courses
+            self.Professors = tempProfessors

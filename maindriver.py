@@ -59,7 +59,7 @@ for course in importCourses:
 importProfessors = dataImport.importFaculty()
 
 scheduler = Scheduler(givenSchedule, importProfessors, history)
-scheduler.fillschedule()
+scheduler.randomScheduling(iterations=250)
 
 print "==============PROFESSORS AND COURSES=============="
 for professor in scheduler.Professors:
