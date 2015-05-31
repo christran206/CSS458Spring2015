@@ -70,8 +70,8 @@ class Course:
             thisStart = int(self.time.split("-")[0])
             thisEnd = int(self.time.split("-")[1])
             # get startand end time of the passed in course
-            compareStart = int(time.split("-")[0])
-            compareEnd = int(time.split("-")[1])
+            compareStart = int(time.split("-")[0]) if time else 0
+            compareEnd = int(time.split("-")[1]) if time else 0
             # Check if this start time is between the times of the course to compare
             if compareStart <= thisStart <= compareEnd:
                 return True

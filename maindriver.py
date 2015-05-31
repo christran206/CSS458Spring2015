@@ -38,9 +38,9 @@ history.readCourses(".\\TimeSchedules\\2014-03-Spring-CSS.tsv", 2014, "spring")
 history.readCourses(".\\TimeSchedules\\2014-04-Summer-CSS.tsv", 2014, "summer")
 
 # read in year 2015
-history.readCourses(".\\TimeSchedules\\2015-01-Fall-CSS.tsv", 2015, "autumn")
-history.readCourses(".\\TimeSchedules\\2015-02-Winter-CSS.tsv", 2015, "winter")
-history.readCourses(".\\TimeSchedules\\2015-03-Spring-CSS.tsv", 2015, "spring")
+# history.readCourses(".\\TimeSchedules\\2015-01-Fall-CSS.tsv", 2015, "autumn")
+# history.readCourses(".\\TimeSchedules\\2015-02-Winter-CSS.tsv", 2015, "winter")
+# history.readCourses(".\\TimeSchedules\\2015-03-Spring-CSS.tsv", 2015, "spring")
 
 # print out enrollment history values for each year
 enrollHistory = history.studentEnrollmentHistory()
@@ -60,7 +60,7 @@ givenSchedule.sortQuarters()
 importProfessors = dataImport.importFaculty()
 
 scheduler = Scheduler(givenSchedule, importProfessors, history)
-scheduler.randomScheduling(iterations=200)
+scheduler.randomScheduling(year=2015, iterations=200)
 
 print "==============PROFESSORS AND COURSES=============="
 for professor in scheduler.Professors:
@@ -75,3 +75,9 @@ print len(unassigned)
 
 print(givenSchedule)
 # Iterate For the next year
+# print out enrollment history values for each year
+enrollHistory = history.studentEnrollmentHistory()
+print "==============COURSE HISTORY=============="
+for year in enrollHistory:
+    print year
+    print "\tEnrolled: " + str(enrollHistory[year][0]) + "\tTotal Capacity: " + str(enrollHistory[year][1]) + "\t" + str(round(float(enrollHistory[year][0])/float(enrollHistory[year][1]) * 100, 1)) + "%"

@@ -159,3 +159,10 @@ class CourseHistory:
                             enrollmentYears[year][0] += course.enrolled
                             enrollmentYears[year][1] += course.capacity
         return enrollmentYears
+
+    def addCourse(self, Course, quarter, year):
+        if Course.number not in self.courseData[quarter]:
+            self.courseData[quarter][Course.number] = {year: []}
+        if year not in self.courseData[quarter][Course.number]:
+            self.courseData[quarter][Course.number][year] = []
+        self.courseData[quarter][Course.number][year].append(Course)

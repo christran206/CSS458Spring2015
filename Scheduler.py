@@ -13,9 +13,12 @@ class Scheduler:
         self.OriginalSchedule = copy.deepcopy(Schedule)
         self.OriginalProfessors = copy.deepcopy(Professors)
 
-    def randomScheduling(self, iterations=500):
+    def randomScheduling(self, year, iterations=500):
         for i in range(iterations):
             self.fillschedule()
+        for quarter in self.Schedule.courses:
+            for course in self.Schedule.courses[quarter]:
+                self.CourseHistory.addCourse(course, quarter, year)
 
     def fillschedule(self):
         """
@@ -28,6 +31,11 @@ class Scheduler:
         # make lists of full-time and part time professors
         fulltime = [professor for professor in tempProfessors if professor.fullTime]
         parttime = [professor for professor in tempProfessors if not professor.fullTime]
+
+        # Get enrollment for all courses
+        for quarter in tempSchedule.courses:
+            for course in tempSchedule.courses[quarter]:
+                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
 
         # shuffle professors
         random.shuffle(fulltime)
@@ -81,12 +89,10 @@ class Scheduler:
                             if professor.classamount - allotment >= 0.5:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
-                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         else:
                             if professor.classamount - allotment >= 1.0:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
-                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         break
                     # break
                 firstRun = False
@@ -143,13 +149,10 @@ class Scheduler:
                             if professor.classamount - allotment >= 0.5:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
-                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
                         else:
                             if professor.classamount - allotment >= 1.0:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
-                                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
-
                         break
                 firstRun = False
         if len(tempSchedule.unassignedCourses()) < len(self.Schedule.unassignedCourses()):
