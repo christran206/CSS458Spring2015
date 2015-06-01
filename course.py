@@ -1,19 +1,38 @@
 __author__ = 'Christopher'
 
-"""
-Course object.
-
-Course object defines a course in the UWB CSS Program.  A course has a SLN,
-course number, name, quarter, days, time, instructor, amount of students enrolled,
-maximum student capacity, and the expertise of the class.  
-
-We store the given input file of course as a list of course objects and the
-assign instructors to courses by matching expertises.  
-"""
-
-
 class Course:
+    
+    """
+    Course object.
+
+    Course object defines a course in the UWB CSS Program.  A course has a SLN,
+    course number, name, quarter, days, time, instructor, amount of students enrolled,
+    maximum student capacity, and the expertise of the class.  
+
+    We store the given input file of course as a list of course objects and the
+    assign instructors to courses by matching expertises.  
+    """
+    
     def __init__(self, sln, number, name, quarter, days, time, instructor, enrolled, capacity, expertise=""):
+        """
+        Course is initialized by assigning passed data to be stored within
+        
+        Inputs: 
+            *SLN: The SLN of the course
+            *number: the course number
+            *name: The course name
+            *quarter: which quarter the course is held
+            *days: Days of the week the course is taught
+            *time: The times the course is taught
+            *instructor: assigned professor to teach the course
+            *enrolled: current enrollment of the course
+            *capacity: Max capacity of the course
+            *expertise: The defined expertise of the course. Defaults to blank
+        
+        Returns:
+            A new course object with above defined data
+        
+        """
         self.sln = int(sln) if sln is not None else 0  # Check valid int and default to 0
         self.number = int(number)
         self.name = name
@@ -26,18 +45,44 @@ class Course:
         self.expertise = expertise
 
     def __str__(self):
+        """
+        String method for course
+        
+        Course is represented as the SLN, Number, name, quarter, days, time, instructor,
+        enrollment, capacity, and expertise.
+        """
+        
         return "SLN: %s\tNumber: %s\tName: %s\tQuarter: %s\tDays: %s\tTime: %s\tInstructor %s\tEnrolled: %s\t\
         Capacity: %s\tExpertise: %s" % \
                (self.sln, self.number, self.name, self.quarter, self.days, self.time, self.instructor.name if self.instructor is not None else None, self.enrolled,
                 self.capacity, self.expertise)
 
     def __repr__(self):
+        """
+        String representation method for course
+        
+        Course is represented as the SLN, Number, name, quarter, days, time, instructor,
+        enrollment, capacity, and expertise.
+        """
+        
         return "SLN: %s\tNumber: %s\tName: %s\tQuarter: %s\tDays: %s\tTime: %s\tInstructor %s\tEnrolled: %s\t\
         Capacity: %s\tExpertise: %s" % \
                (self.sln, self.number, self.name, self.quarter, self.days, self.time, self.instructor.name if self.instructor is not None else None, self.enrolled,
                 self.capacity, self.expertise)
 
     def __lt__(self, other):
+        """
+        Lessthan method for course.
+        
+        One course is defined to be less than another if the course number is 
+        less than the other's
+        
+        Inputs:
+            *other: the other course to compare
+            
+        Return:
+            True if this is less than other, false if not
+        """
         return self.number < other.number
 
     def courseTimeOverlap(self, course):
