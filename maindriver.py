@@ -5,6 +5,7 @@ from Scheduler import Scheduler
 import dataImport
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ##------------------------------------------------------------------------------
 ## The main driver for our scheduler program takes multiple steps to aggregate
 ## historical course data, load in current data, and work thorugh the current 
@@ -60,7 +61,10 @@ Course Instance Row (Every course should have one or more Course Instance Row)
 9. Enrollment information formatted as RegisteredStudents/StudentCapacity
 """
 >>>>>>> cb785e408f5b149e53671a5b915073d2e11f7433
+=======
+>>>>>>> parent of cb785e4... Main Driver streamlined to run simulation for multiple years on an array
 # Create Course History and read all data files
+
 history = CourseHistory()
 # read in year 2010
 history.readCourses(".\\TimeSchedules\\2010-01-Fall-CSS.tsv", 2010, "autumn")
@@ -97,26 +101,30 @@ history.readCourses(".\\TimeSchedules\\2014-04-Summer-CSS.tsv", 2014, "summer")
 # history.readCourses(".\\TimeSchedules\\2015-02-Winter-CSS.tsv", 2015, "winter")
 # history.readCourses(".\\TimeSchedules\\2015-03-Spring-CSS.tsv", 2015, "spring")
 
-"""
-This function updates the static set 10% yearly increase of enrollment to the average increase of all historic data
-"""
-
+history.updateAnnualIncrease()
 
 # print out enrollment history values for each year
-simYears = [2015, 2016, 2017, 2018, 2019, 2020]
+enrollHistory = history.studentEnrollmentHistory()
+print "==============COURSE HISTORY=============="
+for year in enrollHistory:
+    print year
+    print "\tEnrolled: " + str(enrollHistory[year][0]) + "\tTotal Capacity: " + str(enrollHistory[year][1]) + "\t" + str(round(float(enrollHistory[year][0])/float(enrollHistory[year][1]) * 100, 1)) + "%"
+
 # Create the given schedule to fill
 givenSchedule = Schedule()
 
-"""
-Import of schedule to begin simulation
-"""
 importCourses = dataImport.importCourses()
 for course in importCourses:
     givenSchedule.addCourse(course, course.quarter)
 givenSchedule.sortQuarters()
+
 importProfessors = dataImport.importFaculty()
+
 scheduler = Scheduler(givenSchedule, importProfessors, history)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of cb785e4... Main Driver streamlined to run simulation for multiple years on an array
 scheduler.randomScheduling(year=2015, iterations=250)
 
 print "==============PROFESSORS AND COURSES=============="
@@ -131,7 +139,10 @@ for course in unassigned:
 print len(unassigned)
 
 print(scheduler.Schedule)
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of cb785e4... Main Driver streamlined to run simulation for multiple years on an array
 # Iterate For the next year
 # print out enrollment history values for each year
 enrollHistory = history.studentEnrollmentHistory()
@@ -139,6 +150,7 @@ print "==============COURSE HISTORY=============="
 for year in enrollHistory:
     print year
     print "\tEnrolled: " + str(enrollHistory[year][0]) + "\tTotal Capacity: " + str(enrollHistory[year][1]) + "\t" + str(round(float(enrollHistory[year][0])/float(enrollHistory[year][1]) * 100, 1)) + "%"
+<<<<<<< HEAD
 =======
 >>>>>>> cb785e408f5b149e53671a5b915073d2e11f7433
 
@@ -157,6 +169,25 @@ print len(unassigned)
 
 print(scheduler.Schedule)
 
+=======
+
+history.updateAnnualIncrease()
+scheduler.prepareNextYearSchedule()
+scheduler.randomScheduling(year=2016, iterations=250)
+
+print "==============PROFESSORS AND COURSES=============="
+for professor in scheduler.Professors:
+    print professor
+
+print "==============UNASSIGNED COURSES=============="
+unassigned = givenSchedule.unassignedCourses()
+for course in unassigned:
+    print(course)
+
+print len(unassigned)
+
+print(scheduler.Schedule)
+>>>>>>> parent of cb785e4... Main Driver streamlined to run simulation for multiple years on an array
 # Iterate For the next year
 # print out enrollment history values for each year
 enrollHistory = history.studentEnrollmentHistory()
@@ -181,7 +212,10 @@ for course in unassigned:
 print len(unassigned)
 
 print(scheduler.Schedule)
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of cb785e4... Main Driver streamlined to run simulation for multiple years on an array
 # Iterate For the next year
 # print out enrollment history values for each year
 enrollHistory = history.studentEnrollmentHistory()
@@ -189,6 +223,7 @@ print "==============COURSE HISTORY=============="
 for year in enrollHistory:
     print year
     print "\tEnrolled: " + str(enrollHistory[year][0]) + "\tTotal Capacity: " + str(enrollHistory[year][1]) + "\t" + str(round(float(enrollHistory[year][0])/float(enrollHistory[year][1]) * 100, 1)) + "%"
+<<<<<<< HEAD
 =======
 for simYear in simYears:
     history.updateAnnualIncrease()
@@ -217,3 +252,5 @@ for simYear in simYears:
     print "============END COURSE HISTORY============"
     scheduler.prepareNextYearSchedule()
 >>>>>>> cb785e408f5b149e53671a5b915073d2e11f7433
+=======
+>>>>>>> parent of cb785e4... Main Driver streamlined to run simulation for multiple years on an array
