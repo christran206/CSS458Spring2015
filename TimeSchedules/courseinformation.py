@@ -6,6 +6,23 @@ courseHistory = {'autumn': {}, 'winter': {}, 'spring': {}, 'summer': {}}
 
 
 def readCourses(filename, year, quarter):
+    """
+    Read historical course data for a given year/quarter and store in course history.
+    
+    Reads through the historical information from a passed filename representing the
+    courses, enrollment, and capacity of a number of years and quarters we've
+    gathered historical data for. Input files are TSVs with the data we need to
+    calculate and store historical enrollment, capacity, and occupancy of courses.
+    
+    This data is read into the course information course history dictionary, 
+    storing data from courses into each quarter they are for.
+    
+    Inputs:
+        *filename: The relative filename of the input data file
+        *year: Which year is this data for
+        *which quarter is this data for.
+    Returns: none
+    """
     input = open(filename)
     # read a line from file
     line = input.readline()
