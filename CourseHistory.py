@@ -5,10 +5,23 @@ from course import Course
 
 
 class CourseHistory:
+    """
+    CourseHistory object stores historical data of UWB CSS courses for review.
+    
+    Terms: 
+        Enrollment: The number of students enrolled in any course.
+        Capacity: The maximum number of students that can be enrolled in a course
+        Occupancy: Defined as enrollment/capacity.  Should be <100%
+    """
     DEFAULT_ENROLLMENT = 0.80  # Default enrollment percentage for a new course
 
 
     def __init__(self):
+        """
+        New coursehistory is initialized by creating a dictionary of quarters, and 
+        a yearly increase percentage value that represents the expected yearly increase
+        in student population.
+        """
         self.courseData = {'autumn': {}, 'winter': {}, 'spring': {}, 'summer': {}}
         self.yearlyIncrease = 0.10
 
@@ -138,6 +151,17 @@ class CourseHistory:
                 return numpy.random.binomial(courseCapacity, self.DEFAULT_ENROLLMENT)
 
     def printData(self):
+        """
+        Prints the data contained within the course history object.
+        
+        Iterate through each quarter for each course number in this quarter,
+        printing out the relevant information for the course
+        
+        Inputs: 
+            None
+        Return:
+            None
+        """
         # Print out entire course stored
         for quarter in self.courseData:
             print quarter
@@ -149,30 +173,92 @@ class CourseHistory:
                         print "\t\t" + str(course.sln) + "\t" + str(course.days) + "\t" + str(course.time) + "\t" + str(course.enrolled) + "/" + str(course.capacity)
 
     def studentEnrollmentHistory(self):
+        """
+        Calculate the enrollment, capacity, and occupancy for each quarter and year.
+        
+        Ignores the capstone defined courses, and creates a dictionary storing enrollment
+        data for each year.  
+        
+        Occupancy is defined as enrollment / capacity
+        
+        Inputs:
+            None
+        Returns:
+            A dictionary of years, each year storing the enrollment and capacity across
+            all courses defined that year. 
+        """
+        # Ignore courses in this list (capstones, special topics)
         capstonecourses = [499, 498, 497, 198, 199, 600, 700]
+        #Prepare return value
         enrollmentYears = {}
+        #Iterate through each quarter
         for quarter in self.courseData:
+            #Iterate through each course
             for coursenum in self.courseData[quarter]:
+                #iterate through each year                
                 for year in self.courseData[quarter][coursenum]:
                     for course in self.courseData[quarter][coursenum][year]:
+                        #if we're reached the next year, start with values at 0
                         if year not in enrollmentYears:
                             enrollmentYears[year] = [0, 0]
+                        # if a course to count, add the enrollment and capacity
                         if course.number not in capstonecourses:
                             enrollmentYears[year][0] += course.enrolled
                             enrollmentYears[year][1] += course.capacity
+        # Return dictionary of all years enrollment data
         return enrollmentYears
 
     def updateAnnualIncrease(self):
+        """
+        Calculate the average annual change in student population based on 
+        historical enrollment data.
+        
+        For each year in the historical enrollment data we calculate the average
+        enrollment and capacity, and then compare with the previous year to 
+        calculate the difference in population from year to year.  The list of
+        yearly changes is stored in the CourseHistory object's yearlyIncrease list.
+        
+        Inputs: 
+            None
+        Returns: 
+            None
+        """
+
+        #Run and store the annual enrollment data
         enrollmentData = self.studentEnrollmentHistory()
+        
+        #Initialize a list for average occupancy
         averages = []
+        
+        #for each year in historical, store the average occupancy in the average list
         for year in enrollmentData:
             averages.append(float(enrollmentData[year][0])/float(enrollmentData[year][1]))
+        
+        #Initialize a list for differences from year to year
         differences = []
+        
+        #For each pair of back to back years, calculate the difference in occupancy
         for i in range(len(averages) - 1):
             differences.append(averages[i + 1] - averages[i])
+            
+        #Store the difference data in the object's yearly increase data
         self.yearlyIncrease = float(sum(differences))/float(len(differences))
 
     def addCourse(self, Course, quarter, year):
+        """
+        Adds a course to the course history list given the quarter and year.
+        
+        Checks to see if the course already isnt in the quarter and year given, 
+        then adds it to the list of historical course data.
+        
+        Inputs:
+            *course: The course to attempt to add
+            *quarter: which quarter is this course part of
+            *year: which year is this course taking place
+            
+        Returns: 
+            none
+        """
         if Course.number not in self.courseData[quarter]:
             self.courseData[quarter][Course.number] = {year: []}
         if year not in self.courseData[quarter][Course.number]:
