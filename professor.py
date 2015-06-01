@@ -28,6 +28,13 @@ class Professor:
                (self.name, self.fullTime, self.classamount, self.students, self.expertise, self.coursesteaching())
 
     def coursesteaching(self):
+        """
+        Returns a string of courses that a selected professor is listed as teching.
+        
+        Method iterates through each quarter and appends each course a given
+        professor is teaching to a string that is returned.
+        """
+        
         result = ""
         for quarter in self.teaching:
             result += "=" + quarter + "\n"

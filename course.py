@@ -1,5 +1,16 @@
 __author__ = 'Christopher'
 
+"""
+Course object.
+
+Course object defines a course in the UWB CSS Program.  A course has a SLN,
+course number, name, quarter, days, time, instructor, amount of students enrolled,
+maximum student capacity, and the expertise of the class.  
+
+We store the given input file of course as a list of course objects and the
+assign instructors to courses by matching expertises.  
+"""
+
 
 class Course:
     def __init__(self, sln, number, name, quarter, days, time, instructor, enrolled, capacity, expertise=""):
