@@ -7,11 +7,28 @@ from professor import Professor
 
 
 class Scheduler:
+    
+    """
+    Scheduler class handles scheduling of professors to courses. 
+
+    Is initialized by storing a given schedule, list of professors, and course history.
+    Then stores two copies of the schedule and list of professors.  One as an original
+    and one to manipulate. 
+    
+    Scheduler contains a predefined list of available quarters, and thresholds
+    for when we need to hire new full time or part time staff.
+
+    """
     QUARTERS = ["autumn", "spring", "winter", "summer"]
     NEEDNEWFULLSTAFF = 9
     NEEDNEWPARTSTAFF = 3
 
     def __init__(self, Schedule, Professors, CourseHistory):
+        """
+        Scheduler object is initialzied with a passed schedule, list of professors,
+        course history.  Creates clones of the schedule and professors to store as well.
+        
+        """
         self.Schedule = Schedule
         self.Professors = Professors
         self.CourseHistory = CourseHistory
@@ -19,8 +36,14 @@ class Scheduler:
         self.OriginalProfessors = copy.deepcopy(Professors)
 
     def randomScheduling(self, year, iterations=500):
+        """
+        Run the scheduling method we've created a selected number of times.
+        Also adds the completed schedule data to the course history we track.
+        """
+        # Fill a schedule the passed number of iterations times
         for i in range(iterations):
             self.fillschedule()
+        # For each course in each quarter, add the data to the course history
         for quarter in self.Schedule.courses:
             for course in self.Schedule.courses[quarter]:
                 self.CourseHistory.addCourse(course, quarter, year)
@@ -28,7 +51,17 @@ class Scheduler:
     def fillschedule(self):
         """
         Takes the Schedule and Professors and fills the courses with professors if possible
-        :return: None
+        
+        Based on class discussions, we assign all full time professors to courses
+        first, then fill in remaining courses with the given part time professors. 
+        
+        To provide an element of randomness to which professors (full time and 
+        part time) get to pick courses first, we shuffule the list of professors 
+        before scheduling.  This means any professor in each of the full time and 
+        part time lists has a chance of getting first pick or last pick during any
+        iteration.
+        
+        :return: None               
         """
         tempSchedule = copy.deepcopy(self.OriginalSchedule)
         tempProfessors = copy.deepcopy(self.OriginalProfessors)
@@ -168,6 +201,31 @@ class Scheduler:
             self.Professors = tempProfessors
 
     def prepareNextYearSchedule(self, popuationIncreasePercent=0.05):
+        """
+        Clean up data and prepare list of courses, requirements for next year's schedule
+        
+        After completing a schedule, we look at the list of unassigned courses
+        to determine the expertises that were left open.  This is used to determine
+        if we need to hire more part time or full time professors by comparing
+        how many of any expertise were left unfilled to the thresholds for each.
+        
+        We then determine if we need to add more courses to the next year's schedule
+        by viewing occupancy of the current year (enrollment/capacity). If the occupancy 
+        is above a threshold, we add courses at randomly selected days/times of the
+        type of course that was considered full. The threshold is defined by the passed
+        value of student growth.
+        
+        Lastly, we clean up data that was used to manipulate the schedule by clearing
+        the courses a professor is assigned and adding the new list of courses
+        to the schedule so we can run again.
+        
+        Inputs:
+            *populationIncreasePercent: The expected growth of the CSS student 
+            population for the next year.  Defaults to 5%
+            
+        Returns:
+            None
+        """
         self.Schedule = copy.deepcopy(self.Schedule)
         # Hire new professors based on the unassigned courses
         unassignedCourses = self.Schedule.unassignedCourses()
