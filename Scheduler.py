@@ -1,10 +1,15 @@
 __author__ = 'Christopher'
 import random
 import copy
-import sys
+import uuid
+from course import Course
+from professor import Professor
+
 
 class Scheduler:
     QUARTERS = ["autumn", "spring", "winter", "summer"]
+    NEEDNEWFULLSTAFF = 9
+    NEEDNEWPARTSTAFF = 3
 
     def __init__(self, Schedule, Professors, CourseHistory):
         self.Schedule = Schedule
@@ -35,7 +40,8 @@ class Scheduler:
         # Get enrollment for all courses
         for quarter in tempSchedule.courses:
             for course in tempSchedule.courses[quarter]:
-                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity, course.quarter)
+                course.enrolled = self.CourseHistory.getCourseEnrollment(course.number, course.time, course.capacity,
+                                                                         course.quarter)
 
         # shuffle professors
         random.shuffle(fulltime)
@@ -55,7 +61,7 @@ class Scheduler:
                     allotment = 0
                     for coursequarter in professor.teaching:
                         for course in professor.teaching[coursequarter]:
-                            courseLevel = course.number/100
+                            courseLevel = course.number / 100
                             if courseLevel == 1:
                                 allotment += 0.5
                             else:
@@ -67,7 +73,8 @@ class Scheduler:
                         break
                     courses = tempSchedule.courses[quarter]
                     # get only courses where professor has an expertise
-                    compatiblecourses = [course for course in courses if course.expertise in professor.expertise and course.instructor == None]
+                    compatiblecourses = [course for course in courses if
+                                         course.expertise in professor.expertise and course.instructor == None]
                     if len(compatiblecourses) == 0:
                         professorNotCompatCount += 1
                         continue
@@ -84,7 +91,7 @@ class Scheduler:
                                 break
                         if courseConflict:
                             continue
-                        courseLevel = course.number/100
+                        courseLevel = course.number / 100
                         if courseLevel == 1:
                             if professor.classamount - allotment >= 0.5:
                                 course.instructor = professor
@@ -94,7 +101,7 @@ class Scheduler:
                                 course.instructor = professor
                                 professor.teaching[quarter].append(course)
                         break
-                    # break
+                        # break
                 firstRun = False
         # At this point, remaining courses need to be populated with available part time instructors
         # shuffle professors
@@ -115,7 +122,7 @@ class Scheduler:
                     allotment = 0
                     for coursequarter in professor.teaching:
                         for course in professor.teaching[coursequarter]:
-                            courseLevel = course.number/100
+                            courseLevel = course.number / 100
                             if courseLevel == 1:
                                 allotment += 0.5
                             else:
@@ -127,7 +134,8 @@ class Scheduler:
                         break
                     courses = tempSchedule.courses[quarter]
                     # get only courses where professor has an expertise
-                    compatiblecourses = [course for course in courses if course.expertise in professor.expertise and course.instructor == None]
+                    compatiblecourses = [course for course in courses if
+                                         course.expertise in professor.expertise and course.instructor == None]
                     if len(compatiblecourses) == 0:
                         professorNotCompatCount += 1
                         continue
@@ -144,7 +152,7 @@ class Scheduler:
                                 break
                         if courseConflict:
                             continue
-                        courseLevel = course.number/100
+                        courseLevel = course.number / 100
                         if courseLevel == 1:
                             if professor.classamount - allotment >= 0.5:
                                 course.instructor = professor
@@ -158,3 +166,48 @@ class Scheduler:
         if len(tempSchedule.unassignedCourses()) < len(self.Schedule.unassignedCourses()):
             self.Schedule.courses = tempSchedule.courses
             self.Professors = tempProfessors
+
+    def prepareNextYearSchedule(self, popuationIncreasePercent=0.05):
+        self.Schedule = copy.deepcopy(self.Schedule)
+        # Hire new professors based on the unassigned courses
+        unassignedCourses = self.Schedule.unassignedCourses()
+        neededExpertise = {}
+        # collect the expertise and number of classes
+        for course in unassignedCourses:
+            if course.expertise not in neededExpertise:
+                neededExpertise[course.expertise] = 1
+            else:
+                neededExpertise[course.expertise] += 1
+        for expertise in neededExpertise:
+            if neededExpertise[expertise] >= self.NEEDNEWFULLSTAFF:
+                self.Professors.append(Professor(uuid.uuid1(), True, 6.0, 0, expertise))
+            else:
+                self.Professors.append(Professor(uuid.uuid1(), False, 3.0, 0, expertise))
+        # Determine if there is a need for additional classes
+        # Check every class, if the enrollment is at a threshold, add a class of the same number and\or level
+        coursestoadd = {"autumn": [], "winter": [], "spring": [], "summer": []}
+        for quarter in self.Schedule.courses:
+            for course in self.Schedule.courses[quarter]:
+                if course.number not in [newcourse.number for newcourse in coursestoadd[quarter]]:
+                    if float(course.enrolled)/float(course.capacity) >= 1 - popuationIncreasePercent:
+                        days = [["M", "W"], ["T", "TH"]]
+                        capacity = [30, 45, 60]
+                        random.shuffle(days)
+                        random.shuffle(capacity)
+                        coursestoadd[quarter].append(
+                            Course(None, course.number, None, course.quarter, days[0], course.time,
+                                   None, 0, capacity[0], course.expertise))
+
+                    # Empty the schedule for the next iteration
+                course.instructor = None
+                course.enrolled = 0
+        for professor in self.Professors:
+            # empty the courses professor is teaching
+            professor.teaching = {"autumn": [], "winter": [], "spring": [], "summer": []}
+        # add the new courses to the schedule for next iteration
+        for quarter in coursestoadd:
+            for course in coursestoadd[quarter]:
+                self.Schedule.addCourse(course, quarter)
+                self.Schedule.sortQuarters()
+        self.OriginalSchedule = copy.deepcopy(self.Schedule)
+        self.OriginalProfessors = copy.deepcopy(self.Professors)

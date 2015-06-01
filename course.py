@@ -43,7 +43,7 @@ class Course:
                 break
 
         # Check if this course and the passed in course have a time
-        if daysOverlap and self.time != "to be arranged" and course.time != "to be arranged":
+        if daysOverlap and self.time and course.time and self.time != "to be arranged" and course.time != "to be arranged":
             # get start and end time of this course object
             thisStart = int(self.time.split("-")[0])
             thisEnd = int(self.time.split("-")[1])
@@ -65,7 +65,7 @@ class Course:
         :return: true if times overlap, false if they don't
         """
         # Check if this course and the passed in course have a time
-        if self.time != "to be arranged" and time != "to be arranged":
+        if self.time and time and self.time != "to be arranged" and time != "to be arranged":
             # get start and end time of this course object
             thisStart = int(self.time.split("-")[0])
             thisEnd = int(self.time.split("-")[1])

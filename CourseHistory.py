@@ -5,10 +5,12 @@ from course import Course
 
 
 class CourseHistory:
-    DEFAULT_ENROLLMENT = 0.80 # Default enrollment percentage for a new course
+    DEFAULT_ENROLLMENT = 0.80  # Default enrollment percentage for a new course
+
 
     def __init__(self):
         self.courseData = {'autumn': {}, 'winter': {}, 'spring': {}, 'summer': {}}
+        self.yearlyIncrease = 0.10
 
     def readCourses(self, filename, year, quarter):
         """
@@ -111,7 +113,7 @@ class CourseHistory:
                 # average the percentages
                 percent = sum(enrollPercent)/float(len(enrollPercent))
                 # return a discrete number using binomial random number
-                return numpy.random.binomial(courseCapacity, min(percent, 1.0))
+                return numpy.random.binomial(courseCapacity, min(percent + self.yearlyIncrease, 1.0))
 
         else:
             # Parse all data from all quarters
@@ -130,7 +132,7 @@ class CourseHistory:
                 for course in allCourses:
                     enrollPercent.append(float(course.enrolled)/float(course.capacity))
                 percent = sum(enrollPercent)/float(len(enrollPercent))
-                return numpy.random.binomial(courseCapacity, min(percent, 1))
+                return numpy.random.binomial(courseCapacity, min(percent + self.yearlyIncrease, 1))
             else:
                 # This is a new course, return a default value
                 return numpy.random.binomial(courseCapacity, self.DEFAULT_ENROLLMENT)
@@ -159,6 +161,16 @@ class CourseHistory:
                             enrollmentYears[year][0] += course.enrolled
                             enrollmentYears[year][1] += course.capacity
         return enrollmentYears
+
+    def updateAnnualIncrease(self):
+        enrollmentData = self.studentEnrollmentHistory()
+        averages = []
+        for year in enrollmentData:
+            averages.append(float(enrollmentData[year][0])/float(enrollmentData[year][1]))
+        differences = []
+        for i in range(len(averages) - 1):
+            differences.append(averages[i + 1] - averages[i])
+        self.yearlyIncrease = float(sum(differences))/float(len(differences))
 
     def addCourse(self, Course, quarter, year):
         if Course.number not in self.courseData[quarter]:
