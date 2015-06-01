@@ -3,6 +3,38 @@ from CourseHistory import CourseHistory
 from Schedule import Schedule
 from Scheduler import Scheduler
 import dataImport
+##------------------------------------------------------------------------------
+## The main driver for our scheduler program takes multiple steps to aggregate
+## historical course data, load in current data, and work thorugh the current
+## data to create the best fit schedules for future years based on the historical
+## data and estimations on how population will continue to grow going into the
+## future.
+##
+## 1) Read in all historical course data.  Currently we read annual course data
+## from 2010 - 2014. This is stored in a CourseHistory object called "history"
+##
+## 2) Print out the historical enrollment data for these years
+##
+## 3) Load the provided course data and professor data into lists of course and
+## professor objects.
+##
+## 4) Copy the list of courses into a new annual schedule for 2015
+##
+## 5) Run the scheduler method for this schedule, assigning courses to professors
+##
+## 6) Print out the list of professors with their assigned courses. This includes
+## adding new full or part time faculty based on if there is a high number of
+## courses with the same expertise assigned that need to be enrolled
+##
+## 7) Print out the list of classes that did not get professors assigned. Also
+## print out the number of unassigned courses
+##
+## 8) Loop for the next year.  As we move forward, more courses may be added as
+## the student population grows.  We attempt to keep occupancy at the same level
+## it has been historically, so based on student growth, we add courses as the
+## existing courses get filled.  When there are enough courses of a type that
+## do not get professors assigned, we will look to hire more faculty to keep up.
+##------------------------------------------------------------------------------
 
 """
 ======================Time Schedule History======================
@@ -67,7 +99,11 @@ This function updates the static set 10% yearly increase of enrollment to the av
 
 
 # print out enrollment history values for each year
-simYears = [2015, 2016, 2017, 2018, 2019, 2020]
+simStart = 2015
+simiterations = 5
+simYears = []
+for i in range(simStart, simStart+simiterations+1):
+    simYears.append(i)
 # Create the given schedule to fill
 givenSchedule = Schedule()
 
@@ -97,11 +133,13 @@ for simYear in simYears:
         print(course)
     print ""
     print "Number of unassigned Courses: " + str(len(unassigned))
-
+    print ""
     print "==============ANNUAL SCHEDULE============="
     print(scheduler.Schedule)
     # Prepare Schedule for next iteration
     enrollHistory = history.studentEnrollmentHistory()
+    print "============END ANNUAL SCHEDULE==========="
+    print ""
     print "==============COURSE HISTORY=============="
     for year in enrollHistory:
         print year
