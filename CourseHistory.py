@@ -3,6 +3,13 @@ import numpy
 
 from course import Course
 
+##------------------------------------------------------------------------------
+## CSS 458 Final Project
+## Christopher Tran, Jason Dailey, Kevin Parker
+##
+## CourseHistory class provides methods for building, modifying, 
+## and analyzing historical course data.
+##------------------------------------------------------------------------------
 
 class CourseHistory:
     """

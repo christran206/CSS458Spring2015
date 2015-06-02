@@ -1,23 +1,21 @@
-##------------------------------------------------------------------------------
-## CSS 458 Final Project
-## Christopher Tran, Jason Dailey, Kevin Parker
-## Methods to import classes and faculty
-##------------------------------------------------------------------------------
 import numpy as N
 from professor import Professor
 from course import Course
 
-"""
-Data import class provides two methods, one for importing classes and one for faculty.
-
-The courses and faculty are provided to us as CSV files.  Each method opens
-the respective CSV, reads the data into an array, then this array is iterated 
-through while we make a new object (course or professor) from each row.  Each
-of these new objects is appended to a list of similar types of objects.  
-
-We then use these lists to run through the scheduling methods to create schedules
-for future quarters. 
-"""
+##------------------------------------------------------------------------------
+## CSS 458 Final Project
+## Christopher Tran, Jason Dailey, Kevin Parker
+##
+## Data import class provides two methods, one for importing classes and one for faculty.
+##
+## The courses and faculty are provided to us as CSV files.  Each method opens
+## the respective CSV, reads the data into an array, then this array is iterated 
+## through while we make a new object (course or professor) from each row.  Each
+## of these new objects is appended to a list of similar types of objects.  
+##
+## We then use these lists to run through the scheduling methods to create schedules
+## for future quarters. 
+##------------------------------------------------------------------------------
 
 
 def importCourses(path='classes.csv', delimit=',', datatype='str', header=1):

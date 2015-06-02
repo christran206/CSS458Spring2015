@@ -1,8 +1,6 @@
 __author__ = 'Christopher'
 
 
-
-
 class Schedule:
     """
     Schedule object defines an annual schedule of courses in the program.
