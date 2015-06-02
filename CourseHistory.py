@@ -126,7 +126,7 @@ class CourseHistory:
                 # average the percentages
                 percent = sum(enrollPercent)/float(len(enrollPercent))
                 # return a discrete number using binomial random number
-                return numpy.random.binomial(courseCapacity, min(percent + self.yearlyIncrease, 1.0))
+                return numpy.random.binomial(courseCapacity, max(0, min(percent + self.yearlyIncrease, 1)))
 
         else:
             # Parse all data from all quarters
@@ -145,7 +145,7 @@ class CourseHistory:
                 for course in allCourses:
                     enrollPercent.append(float(course.enrolled)/float(course.capacity))
                 percent = sum(enrollPercent)/float(len(enrollPercent))
-                return numpy.random.binomial(courseCapacity, min(percent + self.yearlyIncrease, 1))
+                return numpy.random.binomial(courseCapacity, max(0, min(percent + self.yearlyIncrease, 1)))
             else:
                 # This is a new course, return a default value
                 return numpy.random.binomial(courseCapacity, self.DEFAULT_ENROLLMENT)

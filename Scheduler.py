@@ -19,7 +19,7 @@ class Scheduler:
     for when we need to hire new full time or part time staff.
 
     """
-    QUARTERS = ["autumn", "spring", "winter", "summer"]
+    QUARTERS = ["autumn", "winter", "spring", "summer"]
     NEEDNEWFULLSTAFF = 9
     NEEDNEWPARTSTAFF = 3
 
