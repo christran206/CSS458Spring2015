@@ -119,6 +119,7 @@ scheduler = Scheduler(givenSchedule, importProfessors, history)
 
 
 for simYear in simYears:
+    print "****===================" + str(simYear) + "===================****"
     history.updateAnnualIncrease()
     print ""
     scheduler.randomScheduling(year=simYear, iterations=250)
